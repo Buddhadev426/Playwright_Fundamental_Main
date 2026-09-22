@@ -1,4 +1,5 @@
 import {test, expect} from '@playwright/test';
+
 test.describe('login page', () => {
     test('valid credentials', async({page}) => {
         await page.goto("https://app.thetestingacademy.com/login");

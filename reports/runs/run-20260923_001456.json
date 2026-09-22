@@ -1,0 +1,8 @@
+{
+  "runId": "20260923_001456",
+  "tests": {
+    "chromium › 05_Allur_Reporting\\233_Custom_TestWingify.spec.ts › test case-2 go diectly to dashboard- no login": "failed",
+    "chromium › 05_Allur_Reporting\\233_Custom_TestWingify.spec.ts › test case-1 go diectly to dashboard- no login": "failed",
+    "chromium › 05_Allur_Reporting\\233_Custom_TestWingify.spec.ts › test case-3 go diectly to dashboard- no login": "failed"
+  }
+}

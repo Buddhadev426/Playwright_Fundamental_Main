@@ -24,3 +24,5 @@ async function multiContext(){
     await browser.close();
 
 }
+
+multiContext();

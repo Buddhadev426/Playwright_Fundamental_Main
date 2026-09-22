@@ -1,0 +1,8 @@
+{
+  "runId": "20260923_004307",
+  "tests": {
+    "chromium › 05_Allur_Reporting\\234_Custom_TestWingify_Artifacts.spec.ts › test case-2 go directly to dashboard - capture artifacts": "passed",
+    "chromium › 05_Allur_Reporting\\234_Custom_TestWingify_Artifacts.spec.ts › test case-3 go directly to dashboard - capture artifacts": "passed",
+    "chromium › 05_Allur_Reporting\\234_Custom_TestWingify_Artifacts.spec.ts › test case-1 go directly to dashboard - capture artifacts": "timedOut"
+  }
+}

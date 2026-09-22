@@ -1,0 +1,7 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","20130","test case-3 go directly to dashboard - capture artifacts","chromium","2026-09-23","passed","2026-09-23","","05_Allur_Reporting\234_Custom_TestWingify_Artifacts.spec.ts","",""
+"","60009","test case-1 go directly to dashboard - capture artifacts","chromium","2026-09-23","broken","2026-09-23","","05_Allur_Reporting\234_Custom_TestWingify_Artifacts.spec.ts","",""
+"","19507","test case-1 go diectly to dashboard- no login","chromium","2026-09-22","passed","2026-09-22","","04_Session_Storage\232_TestWingify.spec.ts","",""
+"","12467","test case-3 go diectly to dashboard- no login","chromium","2026-09-22","passed","2026-09-22","","04_Session_Storage\232_TestWingify.spec.ts","",""
+"","51747","test case-2 go directly to dashboard - capture artifacts","chromium","2026-09-23","passed","2026-09-23","","05_Allur_Reporting\234_Custom_TestWingify_Artifacts.spec.ts","",""
+"","17593","test case-2 go diectly to dashboard- no login","chromium","2026-09-22","passed","2026-09-22","","04_Session_Storage\232_TestWingify.spec.ts","",""
