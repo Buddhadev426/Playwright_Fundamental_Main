@@ -1,0 +1,6 @@
+{
+  "runId": "20260925_200334",
+  "tests": {
+    "chromium › 07_webTables\\237_webTable.spec.ts › verify the web table example-2": "passed"
+  }
+}
