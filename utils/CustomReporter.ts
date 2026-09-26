@@ -792,7 +792,7 @@ class CustomTTAReporter implements Reporter {
     </style>
 </head>
 <body>
-    <div class="header"><h1>📊 TTA Report History</h1><p>The Testing Academy - Playwright Framework</p></div>
+    <div class="header"><h1>📊 TTA Report History</h1><p>The Author Buddhadev Maity - Playwright Framework</p></div>
     <div class="report-list">
         ${files.map((f, i) => {
             const match = f.match(/report_(\d{4})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})\.html/);
@@ -818,15 +818,15 @@ class CustomTTAReporter implements Reporter {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TTA Automation Report</title>
+    <title>Buddhadev's Automation Report</title>
     <style>
         ${this.getStyles()}
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>🎭 TTA Automation Report</h1>
-        <p class="header-subtitle">The Testing Academy - Playwright Framework</p>
+        <h1>🎭 Buddhadev's Automation Report</h1>
+        <p class="header-subtitle">The Author Buddhadev Maity - Playwright Framework</p>
     </div>
 
     <div class="container">
@@ -858,7 +858,7 @@ class CustomTTAReporter implements Reporter {
     </div>
 
     <footer class="report-footer">
-        <p>Built with ❤️ by <a href="https://thetestingacademy.com" target="_blank">Pramod Dutta</a> | <a href="https://thetestingacademy.com" target="_blank">The Testing Academy</a></p>
+        <p>Built with ❤️ by <a href="https://www.linkedin.com/in/buddhadev-maity-040b9824b/" target="_blank">Buddhadev Maity</a> | The Custom Repoter</p>
     </footer>
 
     <script>
@@ -1129,7 +1129,7 @@ class CustomTTAReporter implements Reporter {
             const testGroup = test.tags.find(t => t.includes('P0') || t.includes('P1') || t.includes('P2')) ||
                 test.describePath[0] || 'E2E';
 
-            const author = process.env.TEST_AUTHOR || 'TTA-QA';
+            const author = process.env.TEST_AUTHOR || 'Buddha';
 
             const testStartTime = new Date(this.startTime.getTime());
             const testEndTime = new Date(testStartTime.getTime() + test.duration);

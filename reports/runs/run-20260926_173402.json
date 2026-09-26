@@ -1,0 +1,6 @@
+{
+  "runId": "20260926_173402",
+  "tests": {
+    "chromium › 07_webTables\\239_WT_CSS_pseudo.spec.ts › verify web table by css Pseudo": "passed"
+  }
+}
