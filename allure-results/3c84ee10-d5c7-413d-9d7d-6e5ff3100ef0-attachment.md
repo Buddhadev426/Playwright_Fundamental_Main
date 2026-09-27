@@ -1,0 +1,57 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: 07_webTables\240_WE_Pagination.spec.ts >> Locate the element using pagination
+- Location: tests\07_webTables\240_WE_Pagination.spec.ts:11:7
+
+# Error details
+
+```
+Error: locator.isDisabled: Target page, context or browser has been closed
+Call log:
+  - waiting for getByTestId('#next-page')
+
+```
+
+# Test source
+
+```ts
+  1  | /* ## Project :  Pagination in WebTable
+  2  | Objective : Find the on this page - 
+  3  |    [app.thetestingacademy.com/playwright/tables/webtable]
+  4  |    (https://app.thetestingacademy.com/playwright/tables/webtable) 
+  5  | 
+  6  | find the Luca Greco in which country he is present and email ID. */
+  7  | 
+  8  | import { test, expect } from '@playwright/test';
+  9  | import { error } from 'node:console';
+  10 | 
+  11 |   test('Locate the element using pagination', async ({ page }) => {
+  12 | 
+  13 |     await page.goto('https://app.thetestingacademy.com/playwright/tables/webtable');
+  14 |     let name : string = 'Luca Greco';
+  15 |     let row;
+  16 | 
+  17 |     while(true){
+  18 |         row = page.locator('#employees-tbody tr').filter({hasText : name});
+  19 |         if(await row.count()){
+  20 |             break;
+  21 |         }
+  22 |         const next = page.getByTestId('#next-page');
+> 23 |         if(await next.isDisabled()){
+     |                       ^ Error: locator.isDisabled: Target page, context or browser has been closed
+  24 |             throw new error('Data not found');
+  25 |         }
+  26 |         await next.click();
+  27 |     }
+  28 | 
+  29 |     
+  30 |     
+  31 |     await page.pause();
+  32 |   });
+```
