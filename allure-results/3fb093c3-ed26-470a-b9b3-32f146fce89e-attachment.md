@@ -1,0 +1,668 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Practice\07_Flipkart_search.spec.ts >> Test the application >> Search prduct price respect to product name
+- Location: tests\Practice\07_Flipkart_search.spec.ts:3:9
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: locator.fill: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for getByTitle('Search for Products, Brands and More').last()
+    - locator resolved to <input readonly name="q" value="" type="text" autocomplete="off" class="nw1UBF v1zwn26" title="Search for Products, Brands and More" placeholder="Search for Products, Brands and More"/>
+    - fill("DSLR Camera")
+  - attempting fill action
+    2 × waiting for element to be visible, enabled and editable
+      - element is not visible
+    - retrying fill action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and editable
+      - element is not visible
+    - retrying fill action
+      - waiting 100ms
+    14 × waiting for element to be visible, enabled and editable
+       - element is not visible
+     - retrying fill action
+       - waiting 500ms
+    - waiting for "https://www.flipkart.com/" navigation to finish...
+    - navigated to "https://www.flipkart.com/"
+    - waiting for element to be visible, enabled and editable
+  - element was detached from the DOM, retrying
+    - locator resolved to <input readonly name="q" value="" type="text" autocomplete="off" class="nw1UBF v1zwn26" title="Search for Products, Brands and More" placeholder="Search for Products, Brands and More"/>
+    - fill("DSLR Camera")
+  - attempting fill action
+    2 × waiting for element to be visible, enabled and editable
+      - element is not visible
+    - retrying fill action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and editable
+      - element is not visible
+    - retrying fill action
+      - waiting 100ms
+    - waiting for element to be visible, enabled and editable
+    - element is not visible
+  - retrying fill action
+    - waiting 500ms
+    - waiting for element to be visible, enabled and editable
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=f1e1]:
+  - generic [ref=f1e13]:
+    - generic [ref=f1e16]:
+      - generic [ref=f1e18]:
+        - generic [ref=f1e27]:
+          - generic [ref=f1e29]:
+            - img "Image" [ref=f1e32]
+            - img "Image" [ref=f1e35]
+          - link [ref=f1e37] [cursor=pointer]:
+            - /url: /flipkart-minutes-store?marketplace=HYPERLOCAL&autoSwitchAddress=true
+            - img "Image" [ref=f1e40]
+            - img "Image" [ref=f1e43]
+          - link [ref=f1e45] [cursor=pointer]:
+            - /url: /flights-travel-uhp-at-store?marketplace=FKT
+            - img "Image" [ref=f1e48]
+            - img "Image" [ref=f1e51]
+        - generic [ref=f1e59]:
+          - generic [ref=f1e61]:
+            - generic [ref=f1e62]: Location not set
+            - generic [ref=f1e67]: Select delivery location
+          - link "0" [ref=f1e75] [cursor=pointer]:
+            - /url: /supercoin
+      - banner [ref=f1e92]:
+        - generic [ref=f1e96]:
+          - button "Search for Products, Brands and More" [ref=f1e97] [cursor=pointer]:
+            - img "Search Icon" [ref=f1e98]
+          - textbox "Search for Products, Brands and More" [ref=f1e102]
+        - generic [ref=f1e103]:
+          - generic [ref=f1e108]:
+            - link "Account" [ref=f1e109] [cursor=pointer]:
+              - /url: "#"
+              - img "Account" [ref=f1e110]
+            - img "Chevron" [ref=f1e112]
+          - generic [ref=f1e117]:
+            - link "More" [ref=f1e118] [cursor=pointer]:
+              - /url: "#"
+            - img "Chevron" [ref=f1e120]
+          - link "Cart 8 Cart" [ref=f1e123] [cursor=pointer]:
+            - /url: /viewcart?marketplace=FLIPKART
+            - generic [ref=f1e124]:
+              - img "Cart" [ref=f1e125]
+              - generic [ref=f1e126]: "8"
+            - generic [ref=f1e127]: Cart
+      - generic [ref=f1e129]:
+        - link [ref=f1e134] [cursor=pointer]:
+          - /url: https://www.flipkart.com/
+          - heading "For You" [level=1] [ref=f1e140]
+        - link "Fashion" [ref=f1e145] [cursor=pointer]:
+          - /url: /ls-aw-gen-z-men-ub-at-store
+        - link "Mobiles" [ref=f1e156] [cursor=pointer]:
+          - /url: /mobile-phones-store
+        - link "Electronics" [ref=f1e167] [cursor=pointer]:
+          - /url: /new-elec-clp-march-at-store
+        - link "Beauty" [ref=f1e178] [cursor=pointer]:
+          - /url: /bpc-bau-new-inline-at-store
+        - link "Home" [ref=f1e189] [cursor=pointer]:
+          - /url: /home-kitchen-25-at-store
+        - link "Appliances" [ref=f1e200] [cursor=pointer]:
+          - /url: /bbd26-at-store
+        - link "Toys, baby.." [ref=f1e211] [cursor=pointer]:
+          - /url: /toysbc-new26-inline-at-store
+        - link "Food & Health" [ref=f1e222] [cursor=pointer]:
+          - /url: /fnhc-2025-new-at-store
+        - link "Auto Accessories" [ref=f1e233] [cursor=pointer]:
+          - /url: /aa-2025-new-at-store
+        - link "Sports & Fitness" [ref=f1e244] [cursor=pointer]:
+          - /url: /sf-inline-2025-at-store
+        - link "Furniture" [ref=f1e255] [cursor=pointer]:
+          - /url: /india-ka-furniture-studio-inlines-at-store
+        - link "Books" [ref=f1e266] [cursor=pointer]:
+          - /url: /books-at-store
+        - link "2 Wheelers" [ref=f1e277] [cursor=pointer]:
+          - /url: /twowheelers-at-store
+    - generic [ref=f1e291]:
+      - generic [ref=f1e306]:
+        - link [ref=f1e313] [cursor=pointer]:
+          - /url: /early-bird-deals-store?param=123&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InNvdXJjZUNvbnRlbnRUeXBlIjp7InNpbmdsZVZhbHVlQXR0cmlidXRlIjp7ImtleSI6InNvdXJjZUNvbnRlbnRUeXBlIiwiaW5mZXJlbmNlVHlwZSI6IlNDVCIsInZhbHVlIjoiSUFEIiwidmFsdWVUeXBlIjoiU0lOR0xFX1ZBTFVFRCJ9fX19fQ%3D%3D&nnc=NL1OPF0IIOB8_IAD&BU=Mixed
+          - img "Image" [ref=f1e321]
+        - link [ref=f1e328] [cursor=pointer]:
+          - /url: /hmd-vibe2-5g-nordic-blue-64-gb/p/itm71c3ae6df2a26?pid=MOBHN6XYY52DMZKH&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InNvdXJjZUNvbnRlbnRUeXBlIjp7InNpbmdsZVZhbHVlQXR0cmlidXRlIjp7ImtleSI6InNvdXJjZUNvbnRlbnRUeXBlIiwiaW5mZXJlbmNlVHlwZSI6IlNDVCIsInZhbHVlIjoiQUQiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19fX19&nnc=V3KG4HDNA5S6_AD&BU=Mixed
+          - img "Image" [ref=f1e331]
+        - link [ref=f1e338] [cursor=pointer]:
+          - /url: /lava-virat-v1-pro-5g-spiti-frost-128-gb/p/itm1a8312d187a80?pid=MOBHQT22ZGEAX6TT&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InNvdXJjZUNvbnRlbnRUeXBlIjp7InNpbmdsZVZhbHVlQXR0cmlidXRlIjp7ImtleSI6InNvdXJjZUNvbnRlbnRUeXBlIiwiaW5mZXJlbmNlVHlwZSI6IlNDVCIsInZhbHVlIjoiQUQiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19fX19&nnc=SZN8DAPXPILG_AD&BU=Mixed
+          - img "Image" [ref=f1e341]
+        - link [ref=f1e348] [cursor=pointer]:
+          - /url: /nothing-phone-4b-black-128-gb/p/itm939608b40adbb?pid=MOBHZMBDHVTPQTWY&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InNvdXJjZUNvbnRlbnRUeXBlIjp7InNpbmdsZVZhbHVlQXR0cmlidXRlIjp7ImtleSI6InNvdXJjZUNvbnRlbnRUeXBlIiwiaW5mZXJlbmNlVHlwZSI6IlNDVCIsInZhbHVlIjoiQUQiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19fX19&nnc=RE6QXSXAXV9P_AD&BU=Mixed
+          - img "Image" [ref=f1e351]
+        - link [ref=f1e358] [cursor=pointer]:
+          - /url: /hmd-vibe-2-pro-5g-coming-soon-ads-store?ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InNvdXJjZUNvbnRlbnRUeXBlIjp7InNpbmdsZVZhbHVlQXR0cmlidXRlIjp7ImtleSI6InNvdXJjZUNvbnRlbnRUeXBlIiwiaW5mZXJlbmNlVHlwZSI6IlNDVCIsInZhbHVlIjoiQUQiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19fX19&nnc=WUDKCCFTX8FS_AD&BU=Mixed
+          - img "Image" [ref=f1e361]
+        - link [ref=f1e368] [cursor=pointer]:
+          - /url: /beauty-and-grooming/~cs-flmpbeudfl/pr?sid=g9b&collection-tab-name=visible+white&sort=recency_desc&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InNvdXJjZUNvbnRlbnRUeXBlIjp7InNpbmdsZVZhbHVlQXR0cmlidXRlIjp7ImtleSI6InNvdXJjZUNvbnRlbnRUeXBlIiwiaW5mZXJlbmNlVHlwZSI6IlNDVCIsInZhbHVlIjoiQUQiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19fX19&nnc=549G13CBSYK1_AD&BU=Mixed
+          - img "Image" [ref=f1e371]
+        - link [ref=f1e378] [cursor=pointer]:
+          - /url: /laptops/~cs-rckdpoq00s/pr?sid=6bo%2Cb5g&collection-tab-name=chromebook&sort=price_asc&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InNvdXJjZUNvbnRlbnRUeXBlIjp7InNpbmdsZVZhbHVlQXR0cmlidXRlIjp7ImtleSI6InNvdXJjZUNvbnRlbnRUeXBlIiwiaW5mZXJlbmNlVHlwZSI6IlNDVCIsInZhbHVlIjoiQUQiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19fX19&nnc=G9QATGC55404_AD&BU=Mixed
+          - img "Image" [ref=f1e381]
+        - link [ref=f1e388] [cursor=pointer]:
+          - /url: /lg-2026-model-1-5-ton-3-star-split-smart-inverter-faster-cooling-energy-saving-100-copper-condenser-max-5500w-capacity-ai-convertible-6-in-1-cooling-hd-filter-anti-virus-protection-cools-55-degree-celsius-him-clean-viraat-mode-diet-plus-ac/p/itmd1ef8aa4daeab?pid=ACNHZ7TGCDXGRZTT&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InNvdXJjZUNvbnRlbnRUeXBlIjp7InNpbmdsZVZhbHVlQXR0cmlidXRlIjp7ImtleSI6InNvdXJjZUNvbnRlbnRUeXBlIiwiaW5mZXJlbmNlVHlwZSI6IlNDVCIsInZhbHVlIjoiQUQiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19fX19&nnc=RZOFLRBWOCYA_AD&BU=Mixed
+          - img "Image" [ref=f1e391]
+        - link [ref=f1e398] [cursor=pointer]:
+          - /url: /oppo-k14-plus-5g-coming-soon-ads-store?ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InNvdXJjZUNvbnRlbnRUeXBlIjp7InNpbmdsZVZhbHVlQXR0cmlidXRlIjp7ImtleSI6InNvdXJjZUNvbnRlbnRUeXBlIiwiaW5mZXJlbmNlVHlwZSI6IlNDVCIsInZhbHVlIjoiQUQiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19fX19&nnc=JPICR1GQSZ6O_AD&BU=Mixed
+          - img "Image" [ref=f1e401]
+        - link [ref=f1e408] [cursor=pointer]:
+          - /url: /bags-wallets-belts/luggage-travel/~cs-gf3o26zv20/pr?sid=reh%2Cplk&collection-tab-name=Safari_Magnum&sort=price_asc&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InNvdXJjZUNvbnRlbnRUeXBlIjp7InNpbmdsZVZhbHVlQXR0cmlidXRlIjp7ImtleSI6InNvdXJjZUNvbnRlbnRUeXBlIiwiaW5mZXJlbmNlVHlwZSI6IlNDVCIsInZhbHVlIjoiQUQiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19fX19&nnc=OSHIWKMYZCT9_AD&BU=Mixed
+          - img "Image" [ref=f1e411]
+      - generic [ref=f1e433]:
+        - generic [ref=f1e434]:
+          - img "Image" [ref=f1e438]
+          - generic [ref=f1e439]: New week is here! Jump in ⚡
+        - generic [ref=f1e444]:
+          - generic [ref=f1e445]:
+            - link "Image Women's Kurtas View Store" [ref=f1e451] [cursor=pointer]:
+              - /url: /rvs-clp-landing-page-at-store?screen=clp&pk=stores%3Dclo%2Fcfv%2Fcib~pIds%3DKTAHBYDGPYUGFPNV~contentTags%3DRVS_LANDING_PAGE&marketplace=FLIPKART
+              - img "Image" [ref=f1e455]
+              - generic [ref=f1e457]:
+                - generic [ref=f1e458]: Women's Kurtas
+                - generic [ref=f1e459]: View Store
+            - link "Image ↓76% Women's Ethnic Sets Deals for you" [ref=f1e465] [cursor=pointer]:
+              - /url: /rvs-clp-landing-page-at-store?screen=clp&pk=stores%3Dclo%2Fcfv%2Fitg~pIds%3DETHHAWY8MGN4WMBD~contentTags%3DRVS_LANDING_PAGE&marketplace=FLIPKART&cat=WomenEthnicContemporary&bu=LifeStyle
+              - img "Image" [ref=f1e469]
+              - generic [ref=f1e471]: ↓76%
+              - generic [ref=f1e473]:
+                - generic [ref=f1e474]: Women's Ethnic Sets
+                - generic [ref=f1e475]: Deals for you
+            - link "Image aristocrat school bag Continue Search" [ref=f1e481] [cursor=pointer]:
+              - /url: /store/pr?sid=d69,thr,wsp&q=aristocrat+school+bag&marketplace=FLIPKART
+              - img "Image" [ref=f1e485]
+              - generic [ref=f1e487]:
+                - generic [ref=f1e488]: aristocrat school bag
+                - generic [ref=f1e489]: Continue Search
+          - button [ref=f1e490]
+      - generic [ref=f1e504]:
+        - link [ref=f1e509] [cursor=pointer]:
+          - /url: /clothing-and-accessories/~cs-tj1hs5ycq5/pr?sid=clo&collection-tab-name=Men%27s+clothing&p%5B%5D=facets.brand%255B%255D%3DWROGN&p%5B%5D=facets.discount_range_v1%255B%255D%3D60%2525%2Bor%2Bmore&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InNvdXJjZUNvbnRlbnRUeXBlIjp7InNpbmdsZVZhbHVlQXR0cmlidXRlIjp7ImtleSI6InNvdXJjZUNvbnRlbnRUeXBlIiwiaW5mZXJlbmNlVHlwZSI6IlNDVCIsInZhbHVlIjoiQUQiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19fX19&nnc=QCMNUBXHA9G7_AD&BU=Mixed
+          - img "Image" [ref=f1e512]
+        - link [ref=f1e517] [cursor=pointer]:
+          - /url: /mens-footwear/~cs-0x2y7lfuvo/pr?sid=osp%2Ccil&collection-tab-name=Crocs&p%5B%5D=facets.discount_range_v1%255B%255D%3D50%2525%2Bor%2Bmore&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InNvdXJjZUNvbnRlbnRUeXBlIjp7InNpbmdsZVZhbHVlQXR0cmlidXRlIjp7ImtleSI6InNvdXJjZUNvbnRlbnRUeXBlIiwiaW5mZXJlbmNlVHlwZSI6IlNDVCIsInZhbHVlIjoiQUQiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19fX19&nnc=S2GJQM2X3XOL_AD&BU=Mixed
+          - img "Image" [ref=f1e520]
+        - link [ref=f1e525] [cursor=pointer]:
+          - /url: /mens-footwear/pr?sid=osp%2Ccil&p%5B%5D=facets.brand%255B%255D%3DPUMA&p%5B%5D=facets.discount_range_v1%255B%255D%3D60%2525%2Bor%2Bmore&param=963&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InNvdXJjZUNvbnRlbnRUeXBlIjp7InNpbmdsZVZhbHVlQXR0cmlidXRlIjp7ImtleSI6InNvdXJjZUNvbnRlbnRUeXBlIiwiaW5mZXJlbmNlVHlwZSI6IlNDVCIsInZhbHVlIjoiQUQiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19fX19&nnc=QIG8UY13QFNP_AD&BU=Mixed
+          - img "Image" [ref=f1e528]
+      - generic [ref=f1e538]:
+        - generic [ref=f1e541]:
+          - generic [ref=f1e542]: Suggested For You
+          - link [ref=f1e545] [cursor=pointer]:
+            - /url: /smart-suggested-product-expanded-at-store?pk=stores%3Dclo%2Fcfv%2Fitg%2Ftys%2F%2FpIds%3DETHHFK77TZSFBHEA%7EcontentTags%3DADD_PARENT_TO_WIDGET%7Emarketplace%3DFLIPKART%7EwidgetType%3DproductCardV2%7EcontentType%3DbullseyePersonalisedReco&marketplace=FLIPKART&store=clo%2Fcfv%2Fitg%2Ftys%2F&BU=Mixed
+        - generic [ref=f1e553]:
+          - link "Image LAWADIYA FASHION Women Cotton Blend Kurta Pant Dupatta Set ₹1,599 ₹406" [ref=f1e556] [cursor=pointer]:
+            - /url: /lawadiya-fashion-women-kurta-pant-dupatta-set/p/itme8fde8af10854?pid=ETHHZZDYJZUWJMH4&lid=LSTETHHZZDYJZUWJMH4KPORJD&hl_lid=&marketplace=FLIPKART&fm=eyJ3dHAiOiJyZWNvIiwicHJwdCI6ImhwIiwibWlkIjoicGVyc29uYWxpc2VkUmVjb21tZW5kYXRpb24vcDJwLXNhbWUifQ%3D%3D
+            - generic [ref=f1e559]:
+              - img "Image" [ref=f1e563]
+              - generic [ref=f1e566]:
+                - generic [ref=f1e567]: LAWADIYA FASHION Women Cotton Blend Kurta Pant Dupatta Set
+                - generic [ref=f1e568]:
+                  - generic [ref=f1e569]: ₹1,599
+                  - generic [ref=f1e570]: ₹406
+          - link "Image Zinariya Fab Women Viscose Rayon Kurta Pant Dupatta Set ₹2,099 ₹456" [ref=f1e573] [cursor=pointer]:
+            - /url: /zinariya-fab-women-kurta-pant-dupatta-set/p/itm45b269a6dc9fe?pid=ETHHKY7GPYKZUY5A&lid=LSTETHHKY7GPYKZUY5A8JTJZN&hl_lid=&marketplace=FLIPKART&fm=eyJ3dHAiOiJyZWNvIiwicHJwdCI6ImhwIiwibWlkIjoicGVyc29uYWxpc2VkUmVjb21tZW5kYXRpb24vcDJwLXNhbWUifQ%3D%3D
+            - generic [ref=f1e576]:
+              - img "Image" [ref=f1e580]
+              - generic [ref=f1e583]:
+                - generic [ref=f1e584]: Zinariya Fab Women Viscose Rayon Kurta Pant Dupatta Set
+                - generic [ref=f1e585]:
+                  - generic [ref=f1e586]: ₹2,099
+                  - generic [ref=f1e587]: ₹456
+          - link "Image vazpawise Embroidered Kurta, Churidar & Dupatta Set ₹2,500 ₹480" [ref=f1e590] [cursor=pointer]:
+            - /url: /vazpawise-embroidered-kurta-churidar-dupatta-set/p/itmf8242e5b57573?pid=SWDHNEQSAZGSG3HZ&lid=LSTSWDHNEQSAZGSG3HZYYRX9I&hl_lid=&marketplace=FLIPKART&fm=eyJ3dHAiOiJyZWNvIiwicHJwdCI6ImhwIiwibWlkIjoicGVyc29uYWxpc2VkUmVjb21tZW5kYXRpb24vcDJwLXNhbWUifQ%3D%3D
+            - generic [ref=f1e593]:
+              - img "Image" [ref=f1e597]
+              - generic [ref=f1e600]:
+                - generic [ref=f1e601]: vazpawise Embroidered Kurta, Churidar & Dupatta Set
+                - generic [ref=f1e602]:
+                  - generic [ref=f1e603]: ₹2,500
+                  - generic [ref=f1e604]: ₹480
+          - link "Image SI ENTERPRISES Women Cotton Blend Kurta Pant Dupatta Set ₹799 ₹424" [ref=f1e607] [cursor=pointer]:
+            - /url: /si-enterprises-women-kurta-pant-dupatta-set/p/itmf65b0b1b445fc?pid=ETHHHTY4NZYENEKR&lid=LSTETHHHTY4NZYENEKRKMMDIL&hl_lid=&marketplace=FLIPKART&fm=eyJ3dHAiOiJyZWNvIiwicHJwdCI6ImhwIiwibWlkIjoicGVyc29uYWxpc2VkUmVjb21tZW5kYXRpb24vcDJwLXNhbWUifQ%3D%3D
+            - generic [ref=f1e610]:
+              - img "Image" [ref=f1e614]
+              - generic [ref=f1e617]:
+                - generic [ref=f1e618]: SI ENTERPRISES Women Cotton Blend Kurta Pant Dupatta Set
+                - generic [ref=f1e619]:
+                  - generic [ref=f1e620]: ₹799
+                  - generic [ref=f1e621]: ₹424
+          - link "Image ALW FASHION Women Cotton Blend Kurta Pant Set ₹699 ₹277" [ref=f1e624] [cursor=pointer]:
+            - /url: /alw-fashion-women-kurta-pant-set/p/itmaf4ea84aaef0c?pid=ETHHK2VQGNRZFTYP&lid=LSTETHHK2VQGNRZFTYPHZKTDN&hl_lid=&marketplace=FLIPKART&fm=eyJ3dHAiOiJyZWNvIiwicHJwdCI6ImhwIiwibWlkIjoicGVyc29uYWxpc2VkUmVjb21tZW5kYXRpb24vcDJwLXNhbWUifQ%3D%3D
+            - generic [ref=f1e627]:
+              - img "Image" [ref=f1e631]
+              - generic [ref=f1e634]:
+                - generic [ref=f1e635]: ALW FASHION Women Cotton Blend Kurta Pant Set
+                - generic [ref=f1e636]:
+                  - generic [ref=f1e637]: ₹699
+                  - generic [ref=f1e638]: ₹277
+          - link "Image PSCHOICE Women Viscose Rayon Kurti Pant Dupatta Set ₹1,599 ₹414" [ref=f1e641] [cursor=pointer]:
+            - /url: /pschoice-women-kurti-pant-dupatta-set/p/itm2561fcde9e705?pid=ETHHAWY8U2NPMHRF&lid=LSTETHHAWY8U2NPMHRFWACMLJ&hl_lid=&marketplace=FLIPKART&fm=eyJ3dHAiOiJyZWNvIiwicHJwdCI6ImhwIiwibWlkIjoicGVyc29uYWxpc2VkUmVjb21tZW5kYXRpb24vcDJwLXNhbWUifQ%3D%3D
+            - generic [ref=f1e644]:
+              - img "Image" [ref=f1e648]
+              - generic [ref=f1e651]:
+                - generic [ref=f1e652]: PSCHOICE Women Viscose Rayon Kurti Pant Dupatta Set
+                - generic [ref=f1e653]:
+                  - generic [ref=f1e654]: ₹1,599
+                  - generic [ref=f1e655]: ₹414
+      - generic [ref=f1e665]:
+        - generic [ref=f1e668]:
+          - generic [ref=f1e669]: Suggested For You
+          - link [ref=f1e672] [cursor=pointer]:
+            - /url: /smart-suggested-product-expanded-at-store?pk=stores%3Dclo%2Fcfv%2Fcib%2Frkt%2F%2FpIds%3DKTAHBYDGPYUGFPNV%7EcontentTags%3DADD_PARENT_TO_WIDGET%7Emarketplace%3DFLIPKART%7EwidgetType%3DproductCardV2%7EcontentType%3DbullseyePersonalisedReco&marketplace=FLIPKART&store=clo%2Fcfv%2Fcib%2Frkt%2F&BU=Mixed
+        - generic [ref=f1e680]:
+          - link "Image ANUPRIYA CREATION Printed Viscose Rayon Anarkali Kurta for Women Black, Maroon, Gold ₹1,999 ₹332" [ref=f1e683] [cursor=pointer]:
+            - /url: /anupriya-creation-women-printed-anarkali-kurta/p/itmc91f72287aac1?pid=KTAGZEWGYTMDZDNV&lid=LSTKTAGZEWGYTMDZDNVCTOCEG&hl_lid=&marketplace=FLIPKART&fm=eyJ3dHAiOiJyZWNvIiwicHJwdCI6ImhwIiwibWlkIjoicGVyc29uYWxpc2VkUmVjb21tZW5kYXRpb24vcDJwLXNhbWUifQ%3D%3D
+            - generic [ref=f1e686]:
+              - img "Image" [ref=f1e690]
+              - generic [ref=f1e693]:
+                - generic [ref=f1e694]: ANUPRIYA CREATION Printed Viscose Rayon Anarkali Kurta for Women Black, Maroon, Gold
+                - generic [ref=f1e695]:
+                  - generic [ref=f1e696]: ₹1,999
+                  - generic [ref=f1e697]: ₹332
+          - link "Image maruti fab Floral Print Crepe Anarkali Kurta for Women Blue ₹1,299 ₹294" [ref=f1e700] [cursor=pointer]:
+            - /url: /maruti-fab-women-floral-print-anarkali-kurta/p/itm2e54de9298dd0?pid=KTAGRDN5FQXGHCKW&lid=LSTKTAGRDN5FQXGHCKW1AOYOB&hl_lid=&marketplace=FLIPKART&fm=eyJ3dHAiOiJyZWNvIiwicHJwdCI6ImhwIiwibWlkIjoicGVyc29uYWxpc2VkUmVjb21tZW5kYXRpb24vcDJwLXNhbWUifQ%3D%3D
+            - generic [ref=f1e703]:
+              - img "Image" [ref=f1e707]
+              - generic [ref=f1e710]:
+                - generic [ref=f1e711]: maruti fab Floral Print Crepe Anarkali Kurta for Women Blue
+                - generic [ref=f1e712]:
+                  - generic [ref=f1e713]: ₹1,299
+                  - generic [ref=f1e714]: ₹294
+          - link "Image Ladylaz Pack of 2 Self Design Cotton Blend Straight Kurta for Women Dark Blue, Maroon ₹1,999 ₹365" [ref=f1e717] [cursor=pointer]:
+            - /url: /ladylaz-women-self-design-straight-kurta/p/itm5d990b2e93985?pid=KTAGHYEH3XSWP4HP&lid=LSTKTAGHYEH3XSWP4HPF38DIS&hl_lid=&marketplace=FLIPKART&fm=eyJ3dHAiOiJyZWNvIiwicHJwdCI6ImhwIiwibWlkIjoicGVyc29uYWxpc2VkUmVjb21tZW5kYXRpb24vcDJwLXNhbWUifQ%3D%3D
+            - generic [ref=f1e720]:
+              - img "Image" [ref=f1e724]
+              - generic [ref=f1e727]:
+                - generic [ref=f1e728]: Ladylaz Pack of 2 Self Design Cotton Blend Straight Kurta for Women Dark Blue, Maroon
+                - generic [ref=f1e729]:
+                  - generic [ref=f1e730]: ₹1,999
+                  - generic [ref=f1e731]: ₹365
+          - link "Image 4.3 HIRDAY CREATION Printed Pure Cotton, Cotton Blend Anarkali Kurta for Women Yellow ₹999 ₹268" [ref=f1e734] [cursor=pointer]:
+            - /url: /hirday-creation-women-printed-anarkali-kurta/p/itmae153c5d0ad68?pid=KTAHPQ5HTKP4GVZB&lid=LSTKTAHPQ5HTKP4GVZBJN14RV&hl_lid=&marketplace=FLIPKART&fm=eyJ3dHAiOiJyZWNvIiwicHJwdCI6ImhwIiwibWlkIjoicGVyc29uYWxpc2VkUmVjb21tZW5kYXRpb24vcDJwLXNhbWUifQ%3D%3D
+            - generic [ref=f1e737]:
+              - img "Image" [ref=f1e741]
+              - generic: "4.3"
+              - generic [ref=f1e748]:
+                - generic [ref=f1e749]: HIRDAY CREATION Printed Pure Cotton, Cotton Blend Anarkali Kurta for Women Yellow
+                - generic [ref=f1e750]:
+                  - generic [ref=f1e751]: ₹999
+                  - generic [ref=f1e752]: ₹268
+          - link "Image MaharKurtis Printed Pure Cotton Flared Kurta for Women Multicolor ₹3,599 ₹409" [ref=f1e755] [cursor=pointer]:
+            - /url: /maharkurtis-women-printed-flared-kurta/p/itm63c53d9daf4ba?pid=KTAHZ6NYBVBSMWZZ&lid=LSTKTAHZ6NYBVBSMWZZAJDWFH&hl_lid=&marketplace=FLIPKART&fm=eyJ3dHAiOiJyZWNvIiwicHJwdCI6ImhwIiwibWlkIjoicGVyc29uYWxpc2VkUmVjb21tZW5kYXRpb24vcDJwLXNhbWUifQ%3D%3D
+            - generic [ref=f1e758]:
+              - img "Image" [ref=f1e762]
+              - generic [ref=f1e765]:
+                - generic [ref=f1e766]: MaharKurtis Printed Pure Cotton Flared Kurta for Women Multicolor
+                - generic [ref=f1e767]:
+                  - generic [ref=f1e768]: ₹3,599
+                  - generic [ref=f1e769]: ₹409
+          - link "Image Rayon Kurtiwalas Printed Viscose Rayon Anarkali Kurta for Women Maroon ₹1,999 ₹298" [ref=f1e772] [cursor=pointer]:
+            - /url: /rayon-kurtiwalas-women-printed-anarkali-kurta/p/itm4632a6a1594fa?pid=KTAGFDBHHP4TJPXB&lid=LSTKTAGFDBHHP4TJPXBIO0KKU&hl_lid=&marketplace=FLIPKART&fm=eyJ3dHAiOiJyZWNvIiwicHJwdCI6ImhwIiwibWlkIjoicGVyc29uYWxpc2VkUmVjb21tZW5kYXRpb24vcDJwLXNhbWUifQ%3D%3D
+            - generic [ref=f1e775]:
+              - img "Image" [ref=f1e779]
+              - generic [ref=f1e782]:
+                - generic [ref=f1e783]: Rayon Kurtiwalas Printed Viscose Rayon Anarkali Kurta for Women Maroon
+                - generic [ref=f1e784]:
+                  - generic [ref=f1e785]: ₹1,999
+                  - generic [ref=f1e786]: ₹298
+      - generic [ref=f1e796]:
+        - generic [ref=f1e797]: Brands in Spotlight
+        - generic [ref=f1e802]:
+          - link [ref=f1e807] [cursor=pointer]:
+            - /url: /bags-wallets-belts/luggage-travel/~cs-x610bsx500/pr?sid=reh%2Cplk&collection-tab-name=Arisrocart&param=9746&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InNvdXJjZUNvbnRlbnRUeXBlIjp7InNpbmdsZVZhbHVlQXR0cmlidXRlIjp7ImtleSI6InNvdXJjZUNvbnRlbnRUeXBlIiwiaW5mZXJlbmNlVHlwZSI6IlNDVCIsInZhbHVlIjoiQUQiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19fX19&nnc=KR0K9Y9TL6I4_AD&BU=Mixed
+            - img "Image" [ref=f1e810]
+          - link [ref=f1e815] [cursor=pointer]:
+            - /url: /baby-care-products/~cs-351k445d8p/pr?sid=kyh&collection-tab-name=Himalaya+Baby&sort=recency_desc&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InNvdXJjZUNvbnRlbnRUeXBlIjp7InNpbmdsZVZhbHVlQXR0cmlidXRlIjp7ImtleSI6InNvdXJjZUNvbnRlbnRUeXBlIiwiaW5mZXJlbmNlVHlwZSI6IlNDVCIsInZhbHVlIjoiQUQiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19fX19&nnc=0HBSU71ZIS0B_AD&BU=Mixed
+            - img "Image" [ref=f1e818]
+          - link [ref=f1e823] [cursor=pointer]:
+            - /url: /mens-footwear/pr?sid=osp%2Ccil&otracker=nmenu_sub_Men_0_Footwear&p%5B%5D=facets.brand%255B%255D%3DPUMA&p%5B%5D=facets.discount_range_v1%255B%255D%3D60%2525%2Bor%2Bmore&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InNvdXJjZUNvbnRlbnRUeXBlIjp7InNpbmdsZVZhbHVlQXR0cmlidXRlIjp7ImtleSI6InNvdXJjZUNvbnRlbnRUeXBlIiwiaW5mZXJlbmNlVHlwZSI6IlNDVCIsInZhbHVlIjoiQUQiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19fX19&nnc=L7FN6CXQZOX7_AD&BU=Mixed
+            - img "Image" [ref=f1e826]
+      - generic [ref=f1e838]:
+        - link [ref=f1e843] [cursor=pointer]:
+          - /url: /triggr-kraken-x4-13mm-drivers-40ms-latency-enc-60h-battery-rubber-finish-v5-4-bluetooth-gaming/p/itm11fd34f2ddfb6?pid=ACCG6DS7WDJHGWSH&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InNvdXJjZUNvbnRlbnRUeXBlIjp7InNpbmdsZVZhbHVlQXR0cmlidXRlIjp7ImtleSI6InNvdXJjZUNvbnRlbnRUeXBlIiwiaW5mZXJlbmNlVHlwZSI6IlNDVCIsInZhbHVlIjoiQUQiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19fX19&nnc=Z0P8BMSL864A_AD&BU=Mixed
+          - img "Image" [ref=f1e846]
+        - link [ref=f1e851] [cursor=pointer]:
+          - /url: /triggr-kraken-x4-13mm-drivers-40ms-latency-enc-60h-battery-rubber-finish-v5-4-bluetooth-gaming/p/itm11fd34f2ddfb6?pid=ACCH3MUYEGHH2WGD&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InNvdXJjZUNvbnRlbnRUeXBlIjp7InNpbmdsZVZhbHVlQXR0cmlidXRlIjp7ImtleSI6InNvdXJjZUNvbnRlbnRUeXBlIiwiaW5mZXJlbmNlVHlwZSI6IlNDVCIsInZhbHVlIjoiQUQiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19fX19&nnc=3P0SQW5CUR0Z_AD&BU=Mixed
+          - img "Image" [ref=f1e854]
+        - link [ref=f1e859] [cursor=pointer]:
+          - /url: /triggr-kraken-x4-13mm-drivers-40ms-latency-enc-60h-battery-rubber-finish-v5-4-bluetooth-gaming/p/itm11fd34f2ddfb6?pid=ACCH8Z35ZAJSR9CU&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InNvdXJjZUNvbnRlbnRUeXBlIjp7InNpbmdsZVZhbHVlQXR0cmlidXRlIjp7ImtleSI6InNvdXJjZUNvbnRlbnRUeXBlIiwiaW5mZXJlbmNlVHlwZSI6IlNDVCIsInZhbHVlIjoiQUQiLCJ2YWx1ZVR5cGUiOiJTSU5HTEVfVkFMVUVEIn19fX19&nnc=EZWA7BZR9V71_AD&BU=Mixed
+          - img "Image" [ref=f1e862]
+      - generic [ref=f1e874]:
+        - generic [ref=f1e875]:
+          - link "Image Flipkart SBI" [ref=f1e880] [cursor=pointer]:
+            - /url: https://www.flipkart.com/fpg/cbc/sbi/store-page?utm_source=Allcat_nav&utm_source_context=Allcat_nav&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InRpdGxlIjp7Im11bHRpVmFsdWVkQXR0cmlidXRlIjp7ImtleSI6InRpdGxlIiwiaW5mZXJlbmNlVHlwZSI6IlRJVExFIiwidmFsdWVzIjpbIkZsaXBrYXJ0IFNCSSJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX19fX0%3D&BU=Mixed
+            - img "Image" [ref=f1e883]
+            - generic [ref=f1e884]: Flipkart SBI
+          - link "Image Flipkart EMI" [ref=f1e889] [cursor=pointer]:
+            - /url: https://www.flipkart.com/rv/fpg/cfa/ntb/ce?emiType=cfa-term-loan&productCode=CREDIT_MARKETPLACE&utmSource=ADS&utmContext=FKEMI_Nav&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InRpdGxlIjp7Im11bHRpVmFsdWVkQXR0cmlidXRlIjp7ImtleSI6InRpdGxlIiwiaW5mZXJlbmNlVHlwZSI6IlRJVExFIiwidmFsdWVzIjpbIkZsaXBrYXJ0IEVNSSJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX19fX0%3D&BU=Mixed
+            - img "Image" [ref=f1e892]
+            - generic [ref=f1e893]: Flipkart EMI
+          - link "Image Pay Later" [ref=f1e898] [cursor=pointer]:
+            - /url: https://www.flipkart.com/rv/fpg/bnpl?utmSource=fk-fpl107&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InRpdGxlIjp7Im11bHRpVmFsdWVkQXR0cmlidXRlIjp7ImtleSI6InRpdGxlIiwiaW5mZXJlbmNlVHlwZSI6IlRJVExFIiwidmFsdWVzIjpbIlBheSBMYXRlciJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX19fX0%3D&BU=Mixed
+            - img "Image" [ref=f1e901]
+            - generic [ref=f1e902]: Pay Later
+          - link "Image For GenZ" [ref=f1e907] [cursor=pointer]:
+            - /url: /ls-spl-26-gen-z-men-nonline-at-store?param=236896932&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InRpdGxlIjp7Im11bHRpVmFsdWVkQXR0cmlidXRlIjp7ImtleSI6InRpdGxlIiwiaW5mZXJlbmNlVHlwZSI6IlRJVExFIiwidmFsdWVzIjpbIkZvciBHZW5aIl0sInZhbHVlVHlwZSI6Ik1VTFRJX1ZBTFVFRCJ9fX19fQ%3D%3D&BU=Mixed
+            - img "Image" [ref=f1e910]
+            - generic [ref=f1e911]: For GenZ
+          - link "Image Pinkvilla" [ref=f1e916] [cursor=pointer]:
+            - /url: http://www.flipkart.com/ultra/?url=&clientId=Pinkvilla1787836811.services
+            - img "Image" [ref=f1e919]
+            - generic [ref=f1e920]: Pinkvilla
+          - link "Image Flipkart Pay" [ref=f1e925] [cursor=pointer]:
+            - /url: /flipkart-pay-at-store?ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InRpdGxlIjp7Im11bHRpVmFsdWVkQXR0cmlidXRlIjp7ImtleSI6InRpdGxlIiwiaW5mZXJlbmNlVHlwZSI6IlRJVExFIiwidmFsdWVzIjpbIkZsaXBrYXJ0IFBheSJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX19fX0%3D&BU=Mixed
+            - img "Image" [ref=f1e928]
+            - generic [ref=f1e929]: Flipkart Pay
+          - link "Image Gift Cards" [ref=f1e934] [cursor=pointer]:
+            - /url: /gift-card-at-store?param=7654567&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InRpdGxlIjp7Im11bHRpVmFsdWVkQXR0cmlidXRlIjp7ImtleSI6InRpdGxlIiwiaW5mZXJlbmNlVHlwZSI6IlRJVExFIiwidmFsdWVzIjpbIkdpZnQgQ2FyZHMiXSwidmFsdWVUeXBlIjoiTVVMVElfVkFMVUVEIn19fX19&BU=Mixed
+            - img "Image" [ref=f1e937]
+            - generic [ref=f1e938]: Gift Cards
+          - link "Image Sell Phone" [ref=f1e943] [cursor=pointer]:
+            - /url: /reset-sell-store?param=3382&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InRpdGxlIjp7Im11bHRpVmFsdWVkQXR0cmlidXRlIjp7ImtleSI6InRpdGxlIiwiaW5mZXJlbmNlVHlwZSI6IlRJVExFIiwidmFsdWVzIjpbIlNlbGwgUGhvbmUiXSwidmFsdWVUeXBlIjoiTVVMVElfVkFMVUVEIn19fX19&BU=Mixed
+            - img "Image" [ref=f1e946]
+            - generic [ref=f1e947]: Sell Phone
+          - link "Image BLACK" [ref=f1e952] [cursor=pointer]:
+            - /url: /flipkart-black-store?param=389440&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InRpdGxlIjp7Im11bHRpVmFsdWVkQXR0cmlidXRlIjp7ImtleSI6InRpdGxlIiwiaW5mZXJlbmNlVHlwZSI6IlRJVExFIiwidmFsdWVzIjpbIkJMQUNLIl0sInZhbHVlVHlwZSI6Ik1VTFRJX1ZBTFVFRCJ9fX19fQ%3D%3D&BU=Mixed
+            - img "Image" [ref=f1e955]
+            - generic [ref=f1e956]: BLACK
+          - link "Image Originals" [ref=f1e961] [cursor=pointer]:
+            - /url: /flipkart-originals-large-at-store?ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InRpdGxlIjp7Im11bHRpVmFsdWVkQXR0cmlidXRlIjp7ImtleSI6InRpdGxlIiwiaW5mZXJlbmNlVHlwZSI6IlRJVExFIiwidmFsdWVzIjpbIk9yaWdpbmFscyJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX19fX0%3D&BU=Mixed
+            - img "Image" [ref=f1e964]
+            - generic [ref=f1e965]: Originals
+          - link "Image SuperCoin" [ref=f1e970] [cursor=pointer]:
+            - /url: /supercoin?param=76523&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InRpdGxlIjp7Im11bHRpVmFsdWVkQXR0cmlidXRlIjp7ImtleSI6InRpdGxlIiwiaW5mZXJlbmNlVHlwZSI6IlRJVExFIiwidmFsdWVzIjpbIlN1cGVyQ29pbiJdLCJ2YWx1ZVR5cGUiOiJNVUxUSV9WQUxVRUQifX19fX0%3D&BU=Mixed
+            - img "Image" [ref=f1e973]
+            - generic [ref=f1e974]: SuperCoin
+          - link "Image Next Gen" [ref=f1e979] [cursor=pointer]:
+            - /url: /nextgen-brands-spl-store?param=7478&ctx=eyJjYXJkQ29udGV4dCI6eyJhdHRyaWJ1dGVzIjp7InRpdGxlIjp7Im11bHRpVmFsdWVkQXR0cmlidXRlIjp7ImtleSI6InRpdGxlIiwiaW5mZXJlbmNlVHlwZSI6IlRJVExFIiwidmFsdWVzIjpbIk5leHQgR2VuIl0sInZhbHVlVHlwZSI6Ik1VTFRJX1ZBTFVFRCJ9fX19fQ%3D%3D&BU=Mixed
+            - img "Image" [ref=f1e982]
+            - generic [ref=f1e983]: Next Gen
+        - button [ref=f1e984]
+      - generic [ref=f1e996]:
+        - generic [ref=f1e999]:
+          - generic [ref=f1e1000]: Suggested For You
+          - link [ref=f1e1003] [cursor=pointer]:
+            - /url: /smart-suggested-product-expanded-at-store?pk=stores%3Dd69%2Fthr%2Fwsp%2F%2FpIds%3DBKPH26DKNHBCNEWF%7EcontentTags%3DADD_PARENT_TO_WIDGET%7Emarketplace%3DFLIPKART%7EwidgetType%3DproductCardV2%7EcontentType%3DbullseyePersonalisedReco&marketplace=FLIPKART&store=d69%2Fthr%2Fwsp%2F&BU=Mixed
+        - generic [ref=f1e1011]:
+          - link "Image A BRANDZ Large 32 L Laptop Backpack Laptop Backpack New Collection casual laptop Backpack For Men Black ₹1,999 ₹402 ₹358 with Coupon offer + more" [ref=f1e1014] [cursor=pointer]:
+            - /url: /brandz-laptop-backpack-new-collection-casual-men-32-l/p/itm9e6e134d07f63?pid=BKPGZ2Q9FQ9HZH4F&lid=LSTBKPGZ2Q9FQ9HZH4FY8MZRP&hl_lid=&marketplace=FLIPKART&fm=eyJ3dHAiOiJyZWNvIiwicHJwdCI6ImhwIiwibWlkIjoicGVyc29uYWxpc2VkUmVjb21tZW5kYXRpb24vcDJwLXNhbWUifQ%3D%3D
+            - generic [ref=f1e1017]:
+              - img "Image" [ref=f1e1021]
+              - generic [ref=f1e1024]:
+                - generic [ref=f1e1025]: A BRANDZ Large 32 L Laptop Backpack Laptop Backpack New Collection casual laptop Backpack For Men Black
+                - generic [ref=f1e1026]:
+                  - generic [ref=f1e1027]: ₹1,999
+                  - generic [ref=f1e1028]: ₹402
+                - generic [ref=f1e1029]: ₹358 with Coupon offer + more
+          - link "Image 4.2 Myron Unisex Laptop Backpack Heavy Duty Durable Class 5th to 10th For College Travel Waterproof School Bag Black, 45 L ₹2,998 ₹507 ₹450 with Coupon offer + more" [ref=f1e1032] [cursor=pointer]:
+            - /url: /myron-unisex-laptop-backpack-heavy-duty-durable-class-5th-10th-college-travel-waterproof-school-bag/p/itm910a6add995d7?pid=BAGGUZJ8B5JUKQA3&lid=LSTBAGGUZJ8B5JUKQA3DK0AAY&hl_lid=&marketplace=FLIPKART&fm=eyJ3dHAiOiJyZWNvIiwicHJwdCI6ImhwIiwibWlkIjoicGVyc29uYWxpc2VkUmVjb21tZW5kYXRpb24vcDJwLXNhbWUifQ%3D%3D
+            - generic [ref=f1e1035]:
+              - img "Image" [ref=f1e1039]
+              - generic: "4.2"
+              - generic [ref=f1e1046]:
+                - generic [ref=f1e1047]: Myron Unisex Laptop Backpack Heavy Duty Durable Class 5th to 10th For College Travel Waterproof School Bag Black, 45 L
+                - generic [ref=f1e1048]:
+                  - generic [ref=f1e1049]: ₹2,998
+                  - generic [ref=f1e1050]: ₹507
+                - generic [ref=f1e1051]: ₹450 with Coupon offer + more
+          - link "Image ZERUS Stylish PU Leather Backpack with Laptop Sleeve Office College Daily Use Waterproof School Bag Black, 30 L ₹1,399 ₹372 ₹310 with Coupon offer + more" [ref=f1e1054] [cursor=pointer]:
+            - /url: /zerus-stylish-pu-leather-backpack-laptop-sleeve-office-college-daily-use-waterproof-school-bag/p/itm5d9263375f445?pid=BAGHK37ZYEKKFYFU&lid=LSTBAGHK37ZYEKKFYFU0UD8BD&hl_lid=&marketplace=FLIPKART&fm=eyJ3dHAiOiJyZWNvIiwicHJwdCI6ImhwIiwibWlkIjoicGVyc29uYWxpc2VkUmVjb21tZW5kYXRpb24vcDJwLXNhbWUifQ%3D%3D
+            - generic [ref=f1e1057]:
+              - img "Image" [ref=f1e1061]
+              - generic [ref=f1e1064]:
+                - generic [ref=f1e1065]: ZERUS Stylish PU Leather Backpack with Laptop Sleeve Office College Daily Use Waterproof School Bag Black, 30 L
+                - generic [ref=f1e1066]:
+                  - generic [ref=f1e1067]: ₹1,399
+                  - generic [ref=f1e1068]: ₹372
+                - generic [ref=f1e1069]: ₹310 with Coupon offer + more
+          - link "Image Goldstone Medium 30 L Laptop Backpack BEYOND THE EYE . BACKBENCHER BAG WITH TWO SECRET POCKET AND BOTTLE HOLDER Black ₹1,199 ₹383 ₹344 with Coupon offer + more" [ref=f1e1072] [cursor=pointer]:
+            - /url: /goldstone-beyond-eye-backbencher-bag-two-secret-pocket-bottle-holder-30-l-backpack/p/itm43f1358ef84f5?pid=BKPHQRZAVAF3W35H&lid=LSTBKPHQRZAVAF3W35H0MKWQF&hl_lid=&marketplace=FLIPKART&fm=eyJ3dHAiOiJyZWNvIiwicHJwdCI6ImhwIiwibWlkIjoicGVyc29uYWxpc2VkUmVjb21tZW5kYXRpb24vcDJwLXNhbWUifQ%3D%3D
+            - generic [ref=f1e1075]:
+              - img "Image" [ref=f1e1079]
+              - generic [ref=f1e1082]:
+                - generic [ref=f1e1083]: Goldstone Medium 30 L Laptop Backpack BEYOND THE EYE . BACKBENCHER BAG WITH TWO SECRET POCKET AND BOTTLE HOLDER Black
+                - generic [ref=f1e1084]:
+                  - generic [ref=f1e1085]: ₹1,199
+                  - generic [ref=f1e1086]: ₹383
+                - generic [ref=f1e1087]: ₹344 with Coupon offer + more
+          - link "Image Priority Large 35 L Laptop Backpack For Office College Travel Men & Women Blue ₹1,720 ₹779 ₹650 with Coupon offer + more" [ref=f1e1090] [cursor=pointer]:
+            - /url: /priority-office-college-travel-men-women-35-l-laptop-backpack/p/itm5738fbd1c5388?pid=BKPHZ4XPYT32SYFJ&lid=LSTBKPHZ4XPYT32SYFJ4KIMQ4&hl_lid=&marketplace=FLIPKART&fm=eyJ3dHAiOiJyZWNvIiwicHJwdCI6ImhwIiwibWlkIjoicGVyc29uYWxpc2VkUmVjb21tZW5kYXRpb24vcDJwLXNhbWUifQ%3D%3D
+            - generic [ref=f1e1093]:
+              - img "Image" [ref=f1e1097]
+              - generic [ref=f1e1100]:
+                - generic [ref=f1e1101]: Priority Large 35 L Laptop Backpack For Office College Travel Men & Women Blue
+                - generic [ref=f1e1102]:
+                  - generic [ref=f1e1103]: ₹1,720
+                  - generic [ref=f1e1104]: ₹779
+                - generic [ref=f1e1105]: ₹650 with Coupon offer + more
+          - link "Image Hayati Exchange Large 33 L Laptop Backpack New_Vegan Leather Casual Backpack for Office/School/College/Business Tan ₹1,999 ₹395 ₹329 with Coupon offer + more" [ref=f1e1108] [cursor=pointer]:
+            - /url: /hayati-exchange-new-vegan-leather-casual-backpack-office-school-college-business-33-l-laptop/p/itm547e26065410a?pid=BKPHM3DBUYH7CYNX&lid=LSTBKPHM3DBUYH7CYNXFMULEU&hl_lid=&marketplace=FLIPKART&fm=eyJ3dHAiOiJyZWNvIiwicHJwdCI6ImhwIiwibWlkIjoicGVyc29uYWxpc2VkUmVjb21tZW5kYXRpb24vcDJwLXNhbWUifQ%3D%3D
+            - generic [ref=f1e1111]:
+              - img "Image" [ref=f1e1115]
+              - generic [ref=f1e1118]:
+                - generic [ref=f1e1119]: Hayati Exchange Large 33 L Laptop Backpack New_Vegan Leather Casual Backpack for Office/School/College/Business Tan
+                - generic [ref=f1e1120]:
+                  - generic [ref=f1e1121]: ₹1,999
+                  - generic [ref=f1e1122]: ₹395
+                - generic [ref=f1e1123]: ₹329 with Coupon offer + more
+      - generic [ref=f1e1133]:
+        - generic [ref=f1e1136]:
+          - generic [ref=f1e1137]: Suggested For You
+          - link [ref=f1e1140] [cursor=pointer]:
+            - /url: /smart-suggested-product-expanded-at-store?pk=stores%3Dreh%2F4d7%2Fak9%2F%2FpIds%3DBKPHHXG6AGNQHWZ3%7EcontentTags%3DADD_PARENT_TO_WIDGET%7Emarketplace%3DFLIPKART%7EwidgetType%3DproductCardV2%7EcontentType%3DbullseyePersonalisedReco&marketplace=FLIPKART&store=reh%2F4d7%2Fak9%2F&BU=Mixed
+        - generic [ref=f1e1148]:
+          - link "Image Flyscape Medium 25 L Laptop Backpack Terror bag Black, Grey, Black ₹1,299 ₹319 ₹303 with Bank offer" [ref=f1e1151] [cursor=pointer]:
+            - /url: /flyscape-terror-bag-25-l-backpack/p/itm3cb6e6b001371?pid=BKPHCGFZFNBKHE7W&lid=LSTBKPHCGFZFNBKHE7WZ9UGGU&hl_lid=&marketplace=FLIPKART&fm=eyJ3dHAiOiJyZWNvIiwicHJwdCI6ImhwIiwibWlkIjoicGVyc29uYWxpc2VkUmVjb21tZW5kYXRpb24vcDJwLXNhbWUifQ%3D%3D
+            - generic [ref=f1e1154]:
+              - img "Image" [ref=f1e1158]
+              - generic [ref=f1e1161]:
+                - generic [ref=f1e1162]: Flyscape Medium 25 L Laptop Backpack Terror bag Black, Grey, Black
+                - generic [ref=f1e1163]:
+                  - generic [ref=f1e1164]: ₹1,299
+                  - generic [ref=f1e1165]: ₹319
+                - generic [ref=f1e1166]: ₹303 with Bank offer
+          - link "Image 4.2 ARISTOCRAT Large 32 L Laptop Backpack Bloom 02 Lightweight Casual School Bag Yellow - For Women Black ₹2,998 ₹599 ₹569 with Bank offer" [ref=f1e1169] [cursor=pointer]:
+            - /url: /aristocrat-bloom-02-lightweight-casual-school-bag-yellow-women-32-l-laptop-backpack/p/itmcf3820c05743d?pid=BKPH8H9FV9SZZAYD&lid=LSTBKPH8H9FV9SZZAYDPHGWZU&hl_lid=&marketplace=FLIPKART&fm=eyJ3dHAiOiJyZWNvIiwicHJwdCI6ImhwIiwibWlkIjoicGVyc29uYWxpc2VkUmVjb21tZW5kYXRpb24vcDJwLXNhbWUifQ%3D%3D
+            - generic [ref=f1e1172]:
+              - img "Image" [ref=f1e1176]
+              - generic: "4.2"
+              - generic [ref=f1e1183]:
+                - generic [ref=f1e1184]: ARISTOCRAT Large 32 L Laptop Backpack Bloom 02 Lightweight Casual School Bag Yellow - For Women Black
+                - generic [ref=f1e1185]:
+                  - generic [ref=f1e1186]: ₹2,998
+                  - generic [ref=f1e1187]: ₹599
+                - generic [ref=f1e1188]: ₹569 with Bank offer
+          - link "Image 4 MKPremie Large 40 L Laptop Backpack D-Barfi Black ₹999 ₹436 ₹414 with Bank offer" [ref=f1e1191] [cursor=pointer]:
+            - /url: /mkpremie-d-barfi-40-l-backpack/p/itm538c31bd2c3df?pid=BKPHHXR3F9GJMNR3&lid=LSTBKPHHXR3F9GJMNR3JNBN9R&hl_lid=&marketplace=FLIPKART&fm=eyJ3dHAiOiJyZWNvIiwicHJwdCI6ImhwIiwibWlkIjoicGVyc29uYWxpc2VkUmVjb21tZW5kYXRpb24vcDJwLXNhbWUifQ%3D%3D
+            - generic [ref=f1e1194]:
+              - img "Image" [ref=f1e1198]
+              - generic: "4"
+              - generic [ref=f1e1205]:
+                - generic [ref=f1e1206]: MKPremie Large 40 L Laptop Backpack D-Barfi Black
+                - generic [ref=f1e1207]:
+                  - generic [ref=f1e1208]: ₹999
+                  - generic [ref=f1e1209]: ₹436
+                - generic [ref=f1e1210]: ₹414 with Bank offer
+          - link "Image HouseOfCommon Large 40 L Laptop Backpack Large 40 L Laptop Backpack Stylish Unisex laptop bag Black ₹1,993 ₹336 ₹280 with Coupon offer + more" [ref=f1e1213] [cursor=pointer]:
+            - /url: /houseofcommon-large-40-l-laptop-backpack-stylish-unisex-bag/p/itm38bb45def0326?pid=BKPH4KW5YQY3NGEW&lid=LSTBKPH4KW5YQY3NGEWJIKJA2&hl_lid=&marketplace=FLIPKART&fm=eyJ3dHAiOiJyZWNvIiwicHJwdCI6ImhwIiwibWlkIjoicGVyc29uYWxpc2VkUmVjb21tZW5kYXRpb24vcDJwLXNhbWUifQ%3D%3D
+            - generic [ref=f1e1216]:
+              - img "Image" [ref=f1e1220]
+              - generic [ref=f1e1223]:
+                - generic [ref=f1e1224]: HouseOfCommon Large 40 L Laptop Backpack Large 40 L Laptop Backpack Stylish Unisex laptop bag Black
+                - generic [ref=f1e1225]:
+                  - generic [ref=f1e1226]: ₹1,993
+                  - generic [ref=f1e1227]: ₹336
+                - generic [ref=f1e1228]: ₹280 with Coupon offer + more
+          - link "Image ZONAL Large 40 L Laptop Backpack TRAVEL BAG WITH HIP STRAP AND TRAVELLING Rucksack Black ₹2,499 ₹461 ₹411 with Coupon offer + more" [ref=f1e1231] [cursor=pointer]:
+            - /url: /zonal-travel-bag-hip-strap-travelling-rucksack-40-l-backpack/p/itmda4d2c475c6dd?pid=BKPGZ2MQAZGNRY4Z&lid=LSTBKPGZ2MQAZGNRY4ZWZWYWJ&hl_lid=&marketplace=FLIPKART&fm=eyJ3dHAiOiJyZWNvIiwicHJwdCI6ImhwIiwibWlkIjoicGVyc29uYWxpc2VkUmVjb21tZW5kYXRpb24vcDJwLXNhbWUifQ%3D%3D
+            - generic [ref=f1e1234]:
+              - img "Image" [ref=f1e1238]
+              - generic [ref=f1e1241]:
+                - generic [ref=f1e1242]: ZONAL Large 40 L Laptop Backpack TRAVEL BAG WITH HIP STRAP AND TRAVELLING Rucksack Black
+                - generic [ref=f1e1243]:
+                  - generic [ref=f1e1244]: ₹2,499
+                  - generic [ref=f1e1245]: ₹461
+                - generic [ref=f1e1246]: ₹411 with Coupon offer + more
+          - link "Image ZONAL Large 40 L Backpack Laptop Bag for Men/Backpack for Men| Office Bag for Men/Women Black ₹2,499 ₹436 ₹387 with Coupon offer + more" [ref=f1e1249] [cursor=pointer]:
+            - /url: /zonal-laptop-bag-men-backpack-men-office-men-women-40-l-backpack/p/itm274e3ae5fe09d?pid=BKPHF4G3ZXHD7HGR&lid=LSTBKPHF4G3ZXHD7HGRXJMYSN&hl_lid=&marketplace=FLIPKART&fm=eyJ3dHAiOiJyZWNvIiwicHJwdCI6ImhwIiwibWlkIjoicGVyc29uYWxpc2VkUmVjb21tZW5kYXRpb24vcDJwLXNhbWUifQ%3D%3D
+            - generic [ref=f1e1252]:
+              - img "Image" [ref=f1e1256]
+              - generic [ref=f1e1259]:
+                - generic [ref=f1e1260]: ZONAL Large 40 L Backpack Laptop Bag for Men/Backpack for Men| Office Bag for Men/Women Black
+                - generic [ref=f1e1261]:
+                  - generic [ref=f1e1262]: ₹2,499
+                  - generic [ref=f1e1263]: ₹436
+                - generic [ref=f1e1264]: ₹387 with Coupon offer + more
+      - generic [ref=f1e1266]: Hang on, loading content
+      - generic [ref=f1e1280]:
+        - generic [ref=f1e1281]: Flipkart - Your go-to place for Online Shopping
+        - generic [ref=f1e1282]: +
+      - contentinfo [ref=f1e1283]:
+        - generic [ref=f1e1285]:
+          - generic [ref=f1e1286]:
+            - generic [ref=f1e1287]:
+              - generic [ref=f1e1288]: ABOUT
+              - link "Contact Us" [ref=f1e1289] [cursor=pointer]:
+                - /url: /helpcentre?otracker=footer_navlinks
+              - link "About Us" [ref=f1e1290] [cursor=pointer]:
+                - /url: https://corporate.flipkart.net/corporate-home
+              - link "Careers" [ref=f1e1291] [cursor=pointer]:
+                - /url: https://www.flipkartcareers.com/?otracker=footer_navlinks
+              - link "Flipkart Stories" [ref=f1e1292] [cursor=pointer]:
+                - /url: http://stories.flipkart.com/?otracker=footer_navlinks
+              - link "Press" [ref=f1e1293] [cursor=pointer]:
+                - /url: http://stories.flipkart.com/category/top-stories/news/
+              - link "Corporate Information" [ref=f1e1294] [cursor=pointer]:
+                - /url: /corporate-information
+            - generic [ref=f1e1295]:
+              - generic [ref=f1e1296]: GROUP COMPANIES
+              - link "Myntra" [ref=f1e1297] [cursor=pointer]:
+                - /url: https://www.myntra.com/
+              - link "Cleartrip" [ref=f1e1298] [cursor=pointer]:
+                - /url: https://www.cleartrip.com/
+              - link "Shopsy" [ref=f1e1299] [cursor=pointer]:
+                - /url: https://www.shopsy.in
+            - generic [ref=f1e1300]:
+              - generic [ref=f1e1301]: HELP
+              - link "Payments" [ref=f1e1302] [cursor=pointer]:
+                - /url: /pages/payments
+              - link "Shipping" [ref=f1e1303] [cursor=pointer]:
+                - /url: /pages/shipping
+              - link "Cancellation & Returns" [ref=f1e1304] [cursor=pointer]:
+                - /url: /helpcentre?catalog=55c9c6edb000002e002c1701&view=CATALOG
+              - link "FAQ" [ref=f1e1305] [cursor=pointer]:
+                - /url: /helpcentre?catalog=55c9c8e2b0000023002c1702&view=CATALOG
+            - generic [ref=f1e1306]:
+              - generic [ref=f1e1307]: CONSUMER POLICY
+              - link "Cancellation & Returns" [ref=f1e1308] [cursor=pointer]:
+                - /url: /pages/returnpolicy?otracker=footer_navlinks
+              - link "Terms Of Use" [ref=f1e1309] [cursor=pointer]:
+                - /url: /pages/terms?otracker=footer_navlinks
+              - link "Security" [ref=f1e1310] [cursor=pointer]:
+                - /url: /pages/paymentsecurity?otracker=footer_navlinks
+              - link "Privacy" [ref=f1e1311] [cursor=pointer]:
+                - /url: /pages/privacypolicy?otracker=footer_navlinks
+              - link "Sitemap" [ref=f1e1312] [cursor=pointer]:
+                - /url: /sitemap?otracker=footer_navlinks
+              - link "Grievance Redressal" [ref=f1e1313] [cursor=pointer]:
+                - /url: /pages/grievance-redressal-mechanism?otracker=footer_navlinks
+              - link "EPR Compliance" [ref=f1e1314] [cursor=pointer]:
+                - /url: /pages/ewaste-compliance-tnc?otracker=footer_navlinks
+              - link "FSSAI Food Safety Connect App" [ref=f1e1315] [cursor=pointer]:
+                - /url: https://fssai.gov.in/cms/food-safety-connect.php
+            - generic [ref=f1e1316]:
+              - generic [ref=f1e1317]: "Mail Us:"
+              - generic [ref=f1e1318]:
+                - paragraph [ref=f1e1319]: Flipkart Internet Private Limited,
+                - paragraph [ref=f1e1320]: Buildings Alyssa, Begonia &
+                - paragraph [ref=f1e1321]: Clove Embassy Tech Village,
+                - paragraph [ref=f1e1322]: Outer Ring Road, Devarabeesanahalli Village,
+                - paragraph [ref=f1e1323]: Bengaluru, 560103,
+                - paragraph [ref=f1e1324]: Karnataka, India
+              - generic [ref=f1e1325]: "Social:"
+              - generic [ref=f1e1326]:
+                - link "Facebook" [ref=f1e1328] [cursor=pointer]:
+                  - /url: https://www.facebook.com/flipkart
+                  - img "Facebook" [ref=f1e1329]
+                - link "Twitter" [ref=f1e1331] [cursor=pointer]:
+                  - /url: https://www.twitter.com/flipkart
+                  - img "Twitter" [ref=f1e1332]
+                - link "YouTube" [ref=f1e1334] [cursor=pointer]:
+                  - /url: https://www.youtube.com/flipkart
+                  - img "YouTube" [ref=f1e1335]
+                - link "Instagram" [ref=f1e1337] [cursor=pointer]:
+                  - /url: https://www.instagram.com/flipkart
+                  - img "Instagram" [ref=f1e1338]
+            - generic [ref=f1e1339]:
+              - generic [ref=f1e1340]: "Registered Office Address:"
+              - generic [ref=f1e1341]:
+                - paragraph [ref=f1e1342]: Flipkart Internet Private Limited,
+                - paragraph [ref=f1e1343]: Buildings Alyssa, Begonia &
+                - paragraph [ref=f1e1344]: Clove Embassy Tech Village,
+                - paragraph [ref=f1e1345]: Outer Ring Road, Devarabeesanahalli Village,
+                - paragraph [ref=f1e1346]: Bengaluru, 560103,
+                - paragraph [ref=f1e1347]: Karnataka, India
+                - paragraph [ref=f1e1348]: "CIN : U51109KA2012PTC066107"
+                - paragraph
+                - paragraph [ref=f1e1349]:
+                  - text: "Telephone:"
+                  - link "044-45614700" [ref=f1e1350] [cursor=pointer]:
+                    - /url: tel:044-45614700
+                  - text: /
+                  - link "044-67415800" [ref=f1e1351] [cursor=pointer]:
+                    - /url: tel:044-67415800
+          - generic [ref=f1e1352]:
+            - generic [ref=f1e1353]:
+              - img "Become a Seller" [ref=f1e1354]
+              - link "Become a Seller" [ref=f1e1355] [cursor=pointer]:
+                - /url: https://seller.flipkart.com/?utm_source=fkwebsite&utm_medium=websitedirect
+            - generic [ref=f1e1356]:
+              - img "Advertise" [ref=f1e1357]
+              - generic "Advertise" [ref=f1e1358]
+            - generic [ref=f1e1359]:
+              - img "Gift Cards" [ref=f1e1360]
+              - link "Gift Cards" [ref=f1e1361] [cursor=pointer]:
+                - /url: /the-gift-card-store?otracker=footer_navlinks
+            - generic [ref=f1e1362]:
+              - img "Help Center" [ref=f1e1363]
+              - link "Help Center" [ref=f1e1364] [cursor=pointer]:
+                - /url: /helpcentre?otracker=footer_navlinks
+            - generic [ref=f1e1365]: © 2007-2026 Flipkart.com
+            - img "Payment methods"
+  - contentinfo
+```
+
+# Test source
+
+```ts
+  1  | import {test, expect} from '@playwright/test';
+  2  | test.describe("Test the application", () => {
+  3  |     test("Search prduct price respect to product name", async ({page}) => {
+  4  |         await page.goto('https://www.flipkart.com/');
+  5  | 
+  6  |         await page.waitForTimeout(15000);
+> 7  |         await page.getByTitle('Search for Products, Brands and More').last().fill('DSLR Camera');
+     |                                                                              ^ Error: locator.fill: Test timeout of 30000ms exceeded.
+  8  | 
+  9  | 
+  10 |         await page.pause();
+  11 |     })
+  12 | })
+```

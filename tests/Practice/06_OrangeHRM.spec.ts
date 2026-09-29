@@ -17,109 +17,64 @@ test.describe('Test the OrangeHRM', () => {
     .filter({hasText : 'PIM'}).first().click();
     await page.getByRole('button', {name : 'Add'}).first().click();
 
+    await page.waitForTimeout(3000);
+
     //FILLED ALL EMPLOYEE DETAILS AND SAVE
     //choose file
     const fileChooserPromise = page.waitForEvent('filechooser');
     await page.locator('button.employee-image-action').click();
     const fileChooser = await fileChooserPromise;
-    await fileChooser.setFiles("C:/Users/user/Downloads/ChatGPT Image.png");
+    await fileChooser.setFiles("C:/Users/user/Pictures/Screenshots/Screenshot (5).png");
 
     //enter employee details 
-    await page.getByPlaceholder('First Name').first().fill('Buddha');
+    await page.getByPlaceholder('First Name').first().fill('Buddha9');
     await page.getByPlaceholder('Middle Name').first().fill('Dev');
     await page.getByPlaceholder('Last Name').first().fill('Maity');
-    await page.locator('//input[@class="oxd-input oxd-input--active"]').last().fill('0910');
+    await page.locator('//input[@class="oxd-input oxd-input--active"]').last().fill('09109');
 
     // click check and enter username & password
     await page.locator('div.oxd-switch-wrapper').first().click();
     await page.locator('//input[@autocomplete="off"]').first()
-    .fill('buddha@gmail.com');
+    .fill('buddha9@gmail.com');
     await page.locator('//input[@autocomplete="off"]').nth(1)
-    .fill('Buddha@123');
+    .fill('Buddha9@123');
     await page.locator('//input[@autocomplete="off"]').last()
-    .fill('Buddha@123');
+    .fill('Buddha9@123');
     await page.getByRole('button', {name : 'Save'}).click();
 
-    await page.locator('a.oxd-topbar-body-nav-tab-item').first().click();
+    await page.waitForTimeout(3000);
+      //CLICK ON PIM FOR EMPLOYEE LIST
+     await page.locator('li.oxd-main-menu-item-wrapper span')
+    .filter({hasText : 'PIM'}).first().click();
 
-    //check profile by pagination
-    let name : string = 'Buddha Dev Maity';
+    await page.waitForTimeout(3000);
+
+    //CHECK PROFILE BY PAGINATION
+    let firstName : string = 'Buddha9 Dev';
     let row;
     while(true){
-        row =page.locator('//div [@class = "card-item card-body-slot"]')
-    .filter({hasText : name});
-    // if(await row.count() > 0){
-    //     break;
-    // }
-
-    // const next = page.locator('button.oxd-pagination-page-item--previous-next');
-    // if(await next.isDisabled()){
-    //    throw new error('Data not found');
-    // }
-    // await next.click();
-
-    // }
-
-
-     // Scroll through the current page
-    while (await row.count() === 0) {
-
-        const previousScrollHeight = await page.evaluate(
-            () => document.body.scrollHeight
-        );
-
-        await page.mouse.wheel(0, 800);
-        await page.waitForTimeout(500);
-
-        const currentScrollHeight = await page.evaluate(
-            () => document.body.scrollHeight
-        );
-
-        const atBottom = await page.evaluate(() => {
-            return window.innerHeight + window.scrollY >=
-                   document.body.scrollHeight - 10;
-        });
-
-        if (atBottom && currentScrollHeight === previousScrollHeight) {
-            break;
-        }
-    }
-
-    // Found on current page
-    if (await row.count() > 0) {
-        await row.scrollIntoViewIfNeeded();
-
-        console.log('Found:', await row.innerText());
-
+        row =page.locator('div.oxd-table-card')
+    .filter({hasText : firstName});
+    console.log('Row count:', await row.count());
+    if(await row.count() > 0){
+       console.log('✅ Name found:', firstName);
         break;
     }
-
-    // Not found on current page → check pagination
-    const next = page.locator(
-        'button.oxd-pagination-page-item--previous-next'
-    ).last();
-
-    if (await next.isDisabled()) {
-        throw new Error(`Data not found: ${name}`);
+    const next = page.locator('button.oxd-pagination-page-item--previous-next:has(i.bi-chevron-right)');
+    console.log('Next button count:', await next.count());
+    if(await next.isDisabled()){
+       throw new Error('Data not found');
+    }
+    await next.click();
     }
 
-    // Go to next page
-    await next.click();
+    // NAVIGATE AND CLICK ON DELETE
+    await row.locator('button:has(i.bi-trash)').click();
+     await page.waitForTimeout(3000);
 
-    // Optional: wait for the new page/cards
-    await page.waitForTimeout(500);
-}
-    
-
-
-
-
-
-
-
-    
-
-    
+     //HANDALING POP-UP
+     const popup = page.locator('div.orangehrm-dialog-popup');
+     await popup.getByRole('button', {name : 'Yes, Delete'}).click();
     
     await page.pause();
   });
