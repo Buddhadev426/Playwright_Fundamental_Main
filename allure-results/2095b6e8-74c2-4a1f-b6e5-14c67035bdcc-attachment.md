@@ -1,0 +1,122 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: 08_select_Dropdown\245_Advance_MultiDD.spec.ts >> Custom multi-select dropdown
+- Location: tests\08_select_Dropdown\245_Advance_MultiDD.spec.ts:3:7
+
+# Error details
+
+```
+Error: locator.click: Target page, context or browser has been closed
+Call log:
+  - waiting for getByTestId('rs-creatable-input')
+    - locator resolved to <input type="text" aria-label="Add a tag" data-testid="rs-creatable-input"/>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div role="option" data-value="Jest" class="tta-rs__option">Jest</div> from <div data-variant-host="" class="variant-block">…</div> subtree intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    - waiting for element to be visible, enabled and stable
+    - element is not stable
+  - retrying click action
+    - waiting 100ms
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - <div role="option" data-value="Jest" class="tta-rs__option">Jest</div> from <div data-variant-host="" class="variant-block">…</div> subtree intercepts pointer events
+  - retrying click action
+    - waiting 100ms
+    - waiting for element to be visible, enabled and stable
+    - element is not stable
+  10 × retrying click action
+       - waiting 500ms
+       - waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div role="region" class="tta-promo-banner" aria-label="Announcement: Playwright Automation Mastery new batch">…</div> intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+       - waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div role="option" data-value="Jest" class="tta-rs__option">Jest</div> from <div data-variant-host="" class="variant-block">…</div> subtree intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+       - waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div role="option" data-value="Jest" class="tta-rs__option">Jest</div> from <div data-variant-host="" class="variant-block">…</div> subtree intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+       - waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div role="region" class="tta-promo-banner" aria-label="Announcement: Playwright Automation Mastery new batch">…</div> intercepts pointer events
+  - retrying click action
+    - waiting 500ms
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - <div role="region" class="tta-promo-banner" aria-label="Announcement: Playwright Automation Mastery new batch">…</div> intercepts pointer events
+  - retrying click action
+    - waiting 500ms
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - <div role="option" data-value="Jest" class="tta-rs__option">Jest</div> from <div data-variant-host="" class="variant-block">…</div> subtree intercepts pointer events
+  - retrying click action
+    - waiting 500ms
+
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@playwright/test';
+  2  | 
+  3  |   test('Custom multi-select dropdown', async ({ page }) => {
+  4  |     await page.goto('https://app.thetestingacademy.com/playwright/tables/select-boxes');
+  5  | 
+  6  |     //① Single — searchable
+  7  |     await page.getByTestId('rs-single-input').click();
+  8  |     await page.getByText('WebdriverIO', {exact : true}).click();
+  9  | 
+  10 |     //② Multi — chips with remove
+  11 |     await page.getByTestId('rs-multi-input').click();
+  12 |     await page.getByText('Pytest', {exact : true}).click();
+  13 |     await page.getByText('Mocha', {exact : true}).click();
+  14 |     await page.getByLabel('Remove Pytest').click();
+  15 | 
+  16 |     //③ Creatable multi — type and Enter
+  17 | 
+> 18 |     await page.getByTestId('rs-creatable-input').click();
+     |                                                  ^ Error: locator.click: Target page, context or browser has been closed
+  19 |     await page.getByText('performance', {exact : true}).click();
+  20 |     await page.getByText('visual-regression', {exact : true}).click();
+  21 |     await page.getByLabel('Remove visual-regression').click();
+  22 | 
+  23 |     await page.keyboard.press('Escape');
+  24 | 
+  25 | 
+  26 | 
+  27 | 
+  28 |     
+  29 |     
+  30 |     await page.pause();
+  31 |   });
+```

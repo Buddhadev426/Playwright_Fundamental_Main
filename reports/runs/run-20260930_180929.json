@@ -1,0 +1,6 @@
+{
+  "runId": "20260930_180929",
+  "tests": {
+    "chromium › 08_select_Dropdown\\243_select_dropdown.spec.ts › select normal dropdown": "failed"
+  }
+}

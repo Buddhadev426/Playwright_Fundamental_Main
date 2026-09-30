@@ -1,0 +1,5 @@
+Main frame — practice playground
+Total number of frame is :  3
+side
+main
+footer
