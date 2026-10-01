@@ -1,0 +1,4 @@
+Source count: 1
+Target count: 1
+Source box: { x: 358, y: 597.296875, width: 84.5, height: 145.1875 }
+Target box: { x: 467.5, y: 387.765625, width: 110.5, height: 1323.53125 }

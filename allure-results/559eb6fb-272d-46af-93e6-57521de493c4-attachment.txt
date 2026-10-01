@@ -1,0 +1,15 @@
+[
+  'Edit',   '⌘E',
+  'Cut',    '⌘X',
+  'Copy',   '⌘C',
+  'Paste',  '⌘V',
+  'Delete', '⌫',
+  'Quit',   '⌘Q'
+]
+----------------------------------------
+{
+  "action": "copy",
+  "label": "Copy",
+  "target": "ctx-target",
+  "at": "11:06:51 PM"
+}

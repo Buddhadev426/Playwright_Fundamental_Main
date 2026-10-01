@@ -1,0 +1,10 @@
+[
+  'Edit',   '⌘E',
+  'Cut',    '⌘X',
+  'Copy',   '⌘C',
+  'Paste',  '⌘V',
+  'Delete', '⌫',
+  'Quit',   '⌘Q'
+]
+----------------------------------------
+No menu interaction yet. Right-click a box.

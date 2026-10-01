@@ -1,0 +1,8 @@
+{
+  "runId": "20261002_000044",
+  "tests": {
+    "chromium › 11_JS_Alert\\254_JS_Alert.spec.ts › Handle all JS alert › Handle JS Alert - 2": "failed",
+    "chromium › 11_JS_Alert\\254_JS_Alert.spec.ts › Handle all JS alert › Handle JS Alert - 1": "failed",
+    "chromium › 11_JS_Alert\\254_JS_Alert.spec.ts › Handle all JS alert › Handle JS Alert - 3": "failed"
+  }
+}

@@ -1,0 +1,2 @@
+Alert Type :  confirm
+Alert Message :  I am a JS Confirm
