@@ -1,0 +1,7 @@
+{
+  "runId": "20260930_223015",
+  "tests": {
+    "chromium › 02_TestAnnotations\\223_TestAnnotatation.spec.ts › checkout with credit card": "passed",
+    "chromium › 02_TestAnnotations\\224_Test_Describe.spec.ts › login page › checkout with paypa2": "passed"
+  }
+}

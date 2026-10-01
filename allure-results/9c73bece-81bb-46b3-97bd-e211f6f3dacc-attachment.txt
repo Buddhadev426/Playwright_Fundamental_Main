@@ -1,0 +1,14 @@
+{
+  "firstName": "Buddhadev",
+  "lastName": "Maity",
+  "gender": "Male",
+  "yearsExperience": "3",
+  "date": "2000-03-25",
+  "profession": "Automation Tester",
+  "tools": [
+    "UFT",
+    "Selenium Webdriver"
+  ],
+  "continents": "Asia",
+  "upload": {}
+}
