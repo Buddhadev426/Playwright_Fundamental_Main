@@ -1,0 +1,90 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: 11_JS_Alert\254_JS_Alert.spec.ts >> Handle all JS alert >> Handle JS Alert - 3
+- Location: tests\11_JS_Alert\254_JS_Alert.spec.ts:37:5
+
+# Error details
+
+```
+Error: expect(locator).toHaveText(expected) failed
+
+Locator:  locator('#result')
+Expected: "You entered: Hello i am TTA"
+Received: "You entered: null"
+Timeout:  5000ms
+
+Call log:
+  - Expect "toHaveText" locator('#result') with timeout 5000ms
+  - waiting for locator('#result')
+    13 × locator resolved to <p id="result">You entered: null</p>
+       - unexpected value "You entered: null"
+
+```
+
+```yaml
+- paragraph: "You entered: null"
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@playwright/test';
+  2  | 
+  3  | test.describe('Handle all JS alert', () => {
+  4  |     test.beforeEach(async({page}) => {
+  5  |         await page.goto('https://the-internet.herokuapp.com/javascript_alerts')
+  6  |     });
+  7  | 
+  8  |   test('Handle JS Alert - 1', async ({ page }) => {
+  9  | 
+  10 |     await page.getByRole('button', {name : 'Click for JS Alert'}).click();
+  11 | 
+  12 |     page.once('dialog', async dialog =>{
+  13 |         console.log('Alert Type : ', dialog.type());
+  14 |         console.log('Alert Message : ', dialog.message());
+  15 |         expect(dialog.message()).toBe('I am a JS Alert');
+  16 |         await dialog.accept();
+  17 |     })
+  18 |     
+  19 |    
+  20 |   }); 
+  21 | 
+  22 |   test('Handle JS Alert - 2', async ({ page }) => {
+  23 | 
+  24 |     await page.getByRole('button', {name : 'Click for JS Confirm'}).click();
+  25 | 
+  26 |     page.once('dialog', async dialog =>{
+  27 |         console.log('Alert Type : ', dialog.type());
+  28 |         console.log('Alert Message : ', dialog.message());
+  29 |         expect(dialog.message()).toBe('I am a JS Confirm');
+  30 |         //await dialog.dismiss();
+  31 |         await dialog.accept();
+  32 |     })
+  33 | 
+  34 | 
+  35 |   }); 
+  36 |   
+  37 | test('Handle JS Alert - 3', async ({ page }) => {
+  38 | 
+  39 |     const input = 'Hello i am TTA';
+  40 | 
+  41 |     await page.getByRole('button', {name : 'Click for JS Prompt'}).click();
+  42 | 
+  43 |     page.once('dialog', async dialog =>{
+  44 |         expect(dialog.type()).toBe('prompt');
+  45 |         await dialog.accept(input);
+  46 |     })
+  47 |     
+> 48 |     await expect(page.locator('#result')).toHaveText(`You entered: ${input}`)
+     |                                           ^ Error: expect(locator).toHaveText(expected) failed
+  49 |    await page.pause();
+  50 | });
+  51 | 
+  52 | });
+```

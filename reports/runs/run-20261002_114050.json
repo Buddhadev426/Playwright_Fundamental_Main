@@ -1,0 +1,8 @@
+{
+  "runId": "20261002_114050",
+  "tests": {
+    "chromium › 11_JS_Alert\\254_JS_Alert.spec.ts › Handle all JS alert › Handle JS Alert - 2": "timedOut",
+    "chromium › 11_JS_Alert\\254_JS_Alert.spec.ts › Handle all JS alert › Handle JS Alert - 1": "timedOut",
+    "chromium › 11_JS_Alert\\254_JS_Alert.spec.ts › Handle all JS alert › Handle JS Alert - 3": "timedOut"
+  }
+}
