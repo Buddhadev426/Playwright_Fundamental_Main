@@ -1,0 +1,20 @@
+[
+  'Aarav Sharma\nopening',
+  'Vivaan Kulkarni\nopening',
+  'Rohan Mehta',
+  'Devansh Kapoor',
+  'Karthik Menon\ncaptain',
+  'Manav Goyal',
+  'Yash Bhat\nwk',
+  'Extras',
+  'Total',
+  'Ananya Iyer\nopening',
+  'Aisha Banerjee\nopening',
+  'Tara Hegde\ncaptain',
+  'Priya Nair',
+  'Neha Patel',
+  'Sara Kapoor',
+  'Nisha Gupta\nwk',
+  'Extras',
+  'Total'
+]
