@@ -21,7 +21,7 @@ import { error } from 'node:console';
         }
         const next = page.getByTestId('next-page');
         if(await next.isDisabled()){
-            throw new error('Data not found');
+            throw new Error('Data not found');
         }
         await next.click();
     }

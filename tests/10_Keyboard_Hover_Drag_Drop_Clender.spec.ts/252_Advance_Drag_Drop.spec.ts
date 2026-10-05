@@ -17,11 +17,11 @@ test('Verify Drag and Drop in Kanban Board', async ({ page }) => {
     await page.mouse.up();
 
 
-console.log('Source count:', await source.count());
-console.log('Target count:', await target.count());
+// console.log('Source count:', await source.count());
+// console.log('Target count:', await target.count());
 
-console.log('Source box:', sBox);
-console.log('Target box:', tBox);
+// console.log('Source box:', sBox);
+// console.log('Target box:', tBox);
 
 
     await page.pause();
