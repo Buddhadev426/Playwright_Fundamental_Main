@@ -1,0 +1,13 @@
+[
+  '\tAarav.Sharma\t\nAS\nAarav Sharma\nEMP-1001\n\tQA Engineer\tPune\tCloud QA\tACTIVE'
+]
+[
+  '\tPriya.Nair\t\n' +
+    'PN\n' +
+    'Priya Nair\n' +
+    'EMP-1002\n' +
+    '\tProduct Owner\tBengaluru\tNimbus CRM\tACTIVE'
+]
+[
+  '\tRohan.Mehta\t\nRM\nRohan Mehta\nEMP-1003\n\tSDET Lead\tGurugram\tCloud QA\tACTIVE'
+]

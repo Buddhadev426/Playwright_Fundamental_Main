@@ -8,28 +8,27 @@ import { test, expect } from '@playwright/test';
     //await page.locator('//strong[.="Rohan Mehta"]/../../../preceding-sibling::td[2]').click();
     //await page.locator('//strong[.="Rohan Mehta"]/ancestor::td/preceding-sibling::td[2]').click();;
     
-    const firstPart = '//tbody [@id="employee-body"]/tr[';
-    const secondPart = ']/td[';
-    const thirdPart = ']';
+    // const firstPart = '//tbody [@id="employee-body"]/tr[';
+    // const secondPart = ']/td[';
+    // const thirdPart = ']';
 
-    const rows = await page.locator('//tbody [@id="employee-body"]/tr').count();
-    const columns = await page.locator('//tbody [@id="employee-body"]/tr[1]/td').count();
+    const rows = await page.locator('//tbody [@id="employee-body"]/tr/td[3]').all();
+    //const columns = await page.locator('//tbody [@id="employee-body"]/tr[1]/td').count();
 
 
-    for(let i = 1; i <= rows; i++){
-        for(let j = 1; j <= columns; j++){
-            const allPath = `${firstPart}${i}${secondPart}${j}${thirdPart}`;
+    // for(let i = 1; i <= rows; i++){
+    //     for(let j = 1; j <= columns; j++){
+    //         const allPath = `${firstPart}${i}${secondPart}${j}${thirdPart}`;
             //console.log(allPath);
-            const data = await page.locator(allPath).innerText();
+            for(const row of rows){
+            const data :string | null = await row.textContent();
             console.log(data);
 
-            if(data.includes('Rohan Mehta')){
-              await page.locator(`${allPath}/preceding-sibling::td[2]`).click();
+            if(data?.includes('Rohan Mehta')){
+              await row.locator(`xpath=preceding-sibling::td[2]/input`).click();
               
             }
 
-        }
-    }
-    
-    await page.pause();
+          }
+          await page.pause();
   });

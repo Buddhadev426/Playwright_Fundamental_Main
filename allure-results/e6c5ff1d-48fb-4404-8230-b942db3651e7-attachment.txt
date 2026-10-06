@@ -1,0 +1,62 @@
+[
+  '\tAarav.Sharma\t\nAS\nAarav Sharma\nEMP-1001\n\tQA Engineer\tPune\tCloud QA\tACTIVE'
+]
+[
+  '\tPriya.Nair\t\n' +
+    'PN\n' +
+    'Priya Nair\n' +
+    'EMP-1002\n' +
+    '\tProduct Owner\tBengaluru\tNimbus CRM\tACTIVE'
+]
+[
+  '\tRohan.Mehta\t\nRM\nRohan Mehta\nEMP-1003\n\tSDET Lead\tGurugram\tCloud QA\tACTIVE'
+]
+[
+  '\tAnanya.Iyer\t\n' +
+    'AI\n' +
+    'Ananya Iyer\n' +
+    'EMP-1004\n' +
+    '\tDevOps Engineer\tChennai\tMonsoon Pay\tONBOARDING'
+]
+[
+  '\tKabir.Khan\t\n' +
+    'KK\n' +
+    'Kabir Khan\n' +
+    'EMP-1005\n' +
+    '\tSecurity Tester\tHyderabad\tUdaan Risk\tACTIVE'
+]
+[
+  '\tMeera.Rao\t\n' +
+    'MR\n' +
+    'Meera Rao\n' +
+    'EMP-1006\n' +
+    '\tAutomation Architect\tMumbai\tCloud Ledger\tACTIVE'
+]
+[
+  '\tVikram.Singh\t\n' +
+    'VS\n' +
+    'Vikram Singh\n' +
+    'EMP-1007\n' +
+    '\tAPI Tester\tNoida\tBharat API\tINACTIVE'
+]
+[
+  '\tNeha.Patel\t\n' +
+    'NP\n' +
+    'Neha Patel\n' +
+    'EMP-1008\n' +
+    '\tRelease Manager\tAhmedabad\tCloud Retail\tACTIVE'
+]
+[
+  '\tIshaan.Das\t\n' +
+    'ID\n' +
+    'Ishaan Das\n' +
+    'EMP-1009\n' +
+    '\tManual Tester\tKolkata\tCloud QA\tONBOARDING'
+]
+[
+  '\tSana.Qureshi\t\n' +
+    'SQ\n' +
+    'Sana Qureshi\n' +
+    'EMP-1010\n' +
+    '\tData QA Analyst\tIndore\tSky Analytics\tACTIVE'
+]
