@@ -1,0 +1,6 @@
+{
+  "runId": "20261011_095928",
+  "tests": {
+    "chromium › 14_File_Upload_Download\\263_Multiple_file_upload.spec.ts › Test the application › file upload testcase": "failed"
+  }
+}

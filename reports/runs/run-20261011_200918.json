@@ -1,0 +1,6 @@
+{
+  "runId": "20261011_200918",
+  "tests": {
+    "chromium › 16_Scroll_toElement\\268_Lazy_loading.spec.ts › Test the application › Lazy loading testcase": "passed"
+  }
+}

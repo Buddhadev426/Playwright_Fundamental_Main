@@ -17,10 +17,29 @@ import {
 } from '@playwright/test/reporter';
 import * as fs from 'fs';
 import * as path from 'path';
-import { analyzeFailure, type RcaVerdict } from '../ai/agents/rcaAgent';
-import { analyzeFlaky, type BuildSummary, type FlakyResult } from '../ai/agents/flakyAnalyzer';
-import { hasApiKey } from '../ai/config/providers';
-import type { HealReport } from './selfHeal';
+
+type RcaVerdict = {
+    severity: string;
+    priority: string;
+    rootCause: string;
+    fixes: string[];
+};
+
+type BuildSummary = { runId: string; tests: Record<string, TestData['status']> };
+
+type FlakyResult = {
+    counts: { flaky: number; failing: number; total: number };
+    flaky: string[];
+    summary?: string;
+};
+
+type HealReport = {
+    failedSelector: string;
+    intent: string;
+    verified: { selector: string; strategy: string; matchCount: number; visible: boolean; reasoning: string }[];
+    rejected: { selector: string; reason: string }[];
+    unavailableReason?: string;
+};
 
 export interface StepData {
     title: string;
@@ -508,32 +527,8 @@ class CustomTTAReporter implements Reporter {
         const failures = this.testResults.filter(
             (t) => t.status === 'failed' || t.status === 'timedOut',
         );
-        if (failures.length === 0) return;
-        if (!hasApiKey()) {
-            console.log('🤖 RCA agent: no LLM API key set — skipping AI verdict.');
-            return;
-        }
-
-        const cap = 10;
-        const toAnalyze = failures.slice(0, cap);
-        if (failures.length > cap) {
-            console.log(`🤖 RCA agent: analyzing first ${cap} of ${failures.length} failures.`);
-        } else {
-            console.log(`🤖 RCA agent analyzing ${toAnalyze.length} failure(s)...`);
-        }
-
-        for (const t of toAnalyze) {
-            try {
-                const verdict = await analyzeFailure({
-                    title: t.fullTitle,
-                    file: t.location,
-                    error: t.error ?? 'Unknown error',
-                    stack: t.errorStack,
-                });
-                this.aiVerdicts.push({ test: t.fullTitle, file: t.location, verdict });
-            } catch (e) {
-                console.warn(`RCA failed for ${t.title}: ${(e as Error).message}`);
-            }
+        if (failures.length > 0) {
+            console.log('🤖 RCA agent is not configured in this project — skipping AI verdicts.');
         }
     }
 
@@ -570,14 +565,22 @@ class CustomTTAReporter implements Reporter {
         return { prev, curr };
     }
 
-    // Flaky Test Analyzer: diff this build vs the previous build (+ LLM summary).
+    // Compare this build with the previous status snapshot.
     private async runFlakyAnalysis(): Promise<void> {
         const { prev, curr } = this.snapshotAndLoadPrev();
         if (!prev) {
             console.log('🔁 Flaky analyzer: only one build recorded — run again to compare.');
             return;
         }
-        this.flakyResult = await analyzeFlaky(prev, curr, hasApiKey());
+        const currentTests = Object.entries(curr.tests);
+        const flaky = currentTests
+            .filter(([title, status]) => prev.tests[title] !== undefined && prev.tests[title] !== status)
+            .map(([title]) => title);
+        const failing = currentTests.filter(([, status]) => status === 'failed' || status === 'timedOut').length;
+        this.flakyResult = {
+            counts: { flaky: flaky.length, failing, total: currentTests.length },
+            flaky,
+        };
         this.prevBuildId = prev.runId;
         this.currBuildId = curr.runId;
         console.log(
@@ -1672,10 +1675,14 @@ class CustomTTAReporter implements Reporter {
             background: white;
             border-radius: var(--radius);
             box-shadow: var(--shadow-lg);
-            overflow: hidden;
+            max-width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            overscroll-behavior-x: contain;
         }
         .test-table {
-            width: 100%;
+            width: max-content;
+            min-width: 100%;
             border-collapse: separate;
             border-spacing: 0;
             font-size: 13px;
