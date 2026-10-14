@@ -1,0 +1,7 @@
+{
+  "runId": "20261014_184205",
+  "tests": {
+    "chromium › 19_Data_Driven_Testing\\282_LoginTTA_DDT.spec.ts › test the application › Verify user with valid data by DDT": "passed",
+    "chromium › 19_Data_Driven_Testing\\282_LoginTTA_DDT.spec.ts › test the application › Verify user with invalid data by DDT": "passed"
+  }
+}

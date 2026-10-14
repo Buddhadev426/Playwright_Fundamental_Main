@@ -1,0 +1,16 @@
+
+  {
+    "name": "Buddhadev",
+    "experience": 3,
+    "isTrainer": false,
+    "middleName": "",
+    "skills": [
+      "JavaScript",
+      "Playwright",
+      "Selenium"
+    ],
+    "address": {
+      "city": "Kolkata",
+      "country": "India"
+    }
+  }

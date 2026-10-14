@@ -3,8 +3,12 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const VWO_USER = process.env.VWO_USER;
-const VWO_PASS = process.env.VWO_PASS;
+const VWO_USER = process.env.VWO_USER ?? '';
+const VWO_PASS = process.env.VWO_PASS ?? '';
+
+if (!VWO_USER || !VWO_PASS) {
+    throw new Error('Missing VWO_USER or VWO_PASS environment variables.');
+}
 
 async function sessionSorage() {
     let browser = await chromium.launch({headless : false});
