@@ -1,0 +1,6 @@
+{
+  "runId": "20261015_222948",
+  "tests": {
+    "chromium › 20_Page_Object_Model\\292_POM.spec.ts › Login the TTA Cart using POM › login with valid credential": "failed"
+  }
+}
