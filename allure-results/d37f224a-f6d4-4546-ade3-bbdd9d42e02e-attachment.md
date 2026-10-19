@@ -1,0 +1,151 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: 20_Page_Object_Model\293.spec.ts >> login and view the inventory
+- Location: tests\20_Page_Object_Model\293.spec.ts:7:5
+
+# Error details
+
+```
+Error: expect(locator).toContainText(expected) failed
+
+Locator: getByRole('alert', { name: 'Error: First Name is required' })
+Expected substring: "Error: First Name is required"
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toContainText" getByRole('alert', { name: 'Error: First Name is required' }) with timeout 5000ms
+  - waiting for getByRole('alert', { name: 'Error: First Name is required' })
+
+```
+
+```yaml
+- complementary:
+  - button "Close menu": ×
+  - link "All Items":
+    - /url: ./inventory.html
+  - link "About":
+    - /url: https://app.thetestingacademy.com/
+  - link "Logout":
+    - /url: "#"
+  - link "Reset App State":
+    - /url: "#"
+- banner:
+  - button "Open menu":
+    - img
+  - text: TTACart
+  - link "Shopping cart":
+    - /url: ./cart.html
+    - img
+    - text: "1"
+- text: "Checkout: Your Information"
+- main:
+  - textbox "First Name"
+  - textbox "Last Name"
+  - textbox "Zip/Postal Code"
+  - alert: "Error: First Name is required"
+  - link "Cancel":
+    - /url: ./cart.html
+    - img
+    - text: Cancel
+  - button "Continue"
+- contentinfo:
+  - link "Twitter":
+    - /url: https://twitter.com/TheTestingAcad
+    - img
+  - link "Facebook":
+    - /url: https://facebook.com/
+    - img
+  - link "LinkedIn":
+    - /url: https://linkedin.com/
+    - img
+  - text: (c) 2026 TTACart - The Testing Academy. All Rights Reserved.
+  - link "Terms of Service":
+    - /url: https://app.thetestingacademy.com/
+  - text: "|"
+  - link "Privacy Policy":
+    - /url: https://app.thetestingacademy.com/
+```
+
+# Test source
+
+```ts
+  1  | import { expect, test } from "@playwright/test";
+  2  | import { InventoryPage } from "./pages/InventoryPage";
+  3  | import { LoginPage } from "./pages/LoginPage";
+  4  | import { Cart } from "./pages/CartPage";
+  5  | import { Checkout } from "./pages/CheckoutPage";
+  6  | 
+  7  | test("login and view the inventory", async ({ page }) => {
+  8  |   const loginPage = new LoginPage(page);
+  9  |   const inventoryPage = new InventoryPage(page);
+  10 |   const cartPage = new Cart(page);
+  11 |   const checkoutPage = new Checkout(page);
+  12 | 
+  13 |   await loginPage.goto();
+  14 |   await loginPage.login("standard_user", "tta_secret");
+  15 |   await expect(page).toHaveURL(/inventory/);
+  16 | 
+  17 |   await expect(inventoryPage.productTitle).toBeVisible();
+  18 |   await expect(inventoryPage.addToCartButton).toBeVisible();
+  19 |   await expect(inventoryPage.shoppingCartLink).toBeVisible();
+  20 | 
+  21 |   await inventoryPage.inventory();
+  22 |   await expect(page).toHaveURL(/cart/);
+  23 | 
+  24 |   await expect(cartPage.removeButton).toBeVisible();
+  25 |   await cartPage.removeItem();
+  26 |   await expect(cartPage.emptyMessage).toHaveText('Your cart is empty.');
+  27 |   await expect(cartPage.continueshoppingBtn).toBeVisible();
+  28 | 
+  29 |   await cartPage.continueShopping();
+  30 |   await expect(page).toHaveURL(/inventory/);
+  31 |   await expect(cartPage.productTitle).toBeVisible();
+  32 |   await expect(cartPage.productCard).toBeVisible();
+  33 |   await expect(cartPage.addToCartButton).toBeVisible();
+  34 |   await expect(cartPage.cartLink).toBeVisible();
+  35 | 
+  36 |   await cartPage.addBikeLightToCart();
+  37 |   await cartPage.openCart();
+  38 |   await expect(page).toHaveURL(/cart/);
+  39 |   await expect(cartPage.productTitle).toBeVisible();
+  40 |   await expect(cartPage.checkoutLink).toBeVisible();
+  41 |   await cartPage.proceedToCheckout();
+  42 |   await expect(page).toHaveURL(/checkout-step-one/);
+  43 | 
+  44 |   await expect(checkoutPage.continueBtn).toBeVisible();
+  45 |   await expect(checkoutPage.cancleBtn).toBeVisible();
+  46 |   await expect(checkoutPage.firstName).toBeVisible();
+  47 |   await expect(checkoutPage.lastName).toBeVisible();
+  48 |   await expect(checkoutPage.zipCode).toBeVisible();
+  49 | 
+  50 |   await checkoutPage.continueButton();
+> 51 |   await expect(checkoutPage.errorMgs).toContainText('Error: First Name is required');
+     |                                       ^ Error: expect(locator).toContainText(expected) failed
+  52 |   
+  53 |   await checkoutPage.cancleButton();
+  54 |   await expect(page).toHaveURL(/cart/);
+  55 | 
+  56 |   await checkoutPage.checkoutButton();
+  57 |   await expect(checkoutPage.continueBtn).toBeVisible();
+  58 |   await expect(checkoutPage.cancleBtn).toBeVisible();
+  59 |   await expect(checkoutPage.firstName).toBeVisible();
+  60 |   await expect(checkoutPage.lastName).toBeVisible();
+  61 |   await expect(checkoutPage.zipCode).toBeVisible();
+  62 | 
+  63 |   await checkoutPage.informationField('buddha', 'dev', '734556');
+  64 | 
+  65 |   await checkoutPage.continueButton();
+  66 |   await expect(page).toHaveURL(/checkout-step-two/);
+  67 |   await expect(checkoutPage.productName).toBeVisible();
+  68 | 
+  69 |   await page.pause();
+  70 | });
+  71 | 
+```

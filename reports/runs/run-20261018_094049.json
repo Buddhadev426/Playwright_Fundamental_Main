@@ -1,0 +1,6 @@
+{
+  "runId": "20261018_094049",
+  "tests": {
+    "chromium › 20_Page_Object_Model\\293.spec.ts › login and view the inventory": "failed"
+  }
+}

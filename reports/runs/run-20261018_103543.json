@@ -1,0 +1,6 @@
+{
+  "runId": "20261018_103543",
+  "tests": {
+    "chromium › 20_Page_Object_Model\\293_TTACart_POM.spec.ts › login and view the inventory": "failed"
+  }
+}
