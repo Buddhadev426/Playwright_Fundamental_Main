@@ -37,7 +37,7 @@ import { test, expect } from '@playwright/test';
       const data : string | null = await name.textContent();
 
             if(data?.includes('Giovanni Rovelli')){
-                const countryPath = name.locator('xpath=following-sibling::td[1]');;
+                const countryPath = name.locator('xpath=following-sibling::td[1]');
                 const countryText = await countryPath.textContent();
                 console.log('--------');
                 console.log(`Giovanni Rovelli is in - ${countryText}`);

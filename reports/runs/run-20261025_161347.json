@@ -1,0 +1,6 @@
+{
+  "runId": "20261025_161347",
+  "tests": {
+    "chromium › 09_iFrame_Frame\\246_iFrame.spec.ts › Access single i-frame": "passed"
+  }
+}
